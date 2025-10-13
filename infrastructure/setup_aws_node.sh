@@ -16,7 +16,7 @@ echo "  Private IP: ${PRIVATE_IP}"
 echo ""
 
 # Ensure the scripts are executable
-chmod +x install_kubernetes.sh complete-gpu-setup.sh
+chmod +x infrastructure/install_kubernetes.sh infrastructure/complete-gpu-setup.sh
 
 # Run Kubernetes installation
 echo "--- Running Kubernetes Installation ---"
@@ -27,7 +27,7 @@ PUBLIC_IP="${PUBLIC_IP}" \
 PRIVATE_IP="${PRIVATE_IP}" \
 SSH_KEY_PATH="${SSH_KEY_PATH}" \
 SSH_USER="${SSH_USER}" \
-./install_kubernetes.sh
+./infrastructure/install_kubernetes.sh
 # Example if using arguments:
 # ./install_kubernetes.sh "${PUBLIC_IP}" "${PRIVATE_IP}"
 
@@ -48,7 +48,7 @@ PUBLIC_IP="${PUBLIC_IP}" \
 PRIVATE_IP="${PRIVATE_IP}" \
 SSH_KEY_PATH="${SSH_KEY_PATH}" \
 SSH_USER="${SSH_USER}" \
-./complete-gpu-setup.sh
+./infrastructure/complete-gpu-setup.sh
 # Example if using arguments:
 # ./complete-gpu-setup.sh "${PUBLIC_IP}" "${PRIVATE_IP}"
 

@@ -51,17 +51,17 @@ echo "Phase 1: Remote GPU node configuration..."
 GPU_NODE_IP="${PUBLIC_IP}" \
 SSH_KEY_PATH="${SSH_KEY_PATH}" \
 SSH_USER="${SSH_USER}" \
-./remote-gpu-setup.sh
+./infrastructure/remote-gpu-setup.sh
 check_success "Remote GPU node setup"
 
 echo ""
 echo "Phase 2: Device plugin deployment..."
-./gpu-deploy.sh
+./infrastructure/gpu-deploy.sh
 check_success "GPU device plugin deployment"
 
 echo ""
 echo "Phase 3: GPU functionality testing..."
-./gpu-test.sh
+./infrastructure/gpu-test.sh
 check_success "GPU functionality test"
 
 echo ""
