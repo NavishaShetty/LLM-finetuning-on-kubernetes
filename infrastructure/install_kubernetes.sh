@@ -404,12 +404,15 @@ if [ $? -eq 0 ]; then
     echo ""
     echo "Cluster info:"
     kubectl cluster-info --kubeconfig="$HOME/.kube/config"
+    return 0 # Indicate success
 else
     echo "❌ kubectl connection failed"
     echo ""
-    echo "Required: Add port 6443 to your AWS security group"
+    echo "HINT: Please ensure port 6443 is open in your AWS security group."
+    echo "Recommended rule:"
     echo "• Type: Custom TCP, Port: 6443, Source: $(curl -s -4 ifconfig.me)/32"
     echo ""
-    echo "Test connection manually:"
+    echo "You can test the connection manually from your local machine with:"
     echo "kubectl get nodes --insecure-skip-tls-verify=true --kubeconfig=\"$HOME/.kube/config\""
+    return 1 # Indicate failure
 fi

@@ -20,16 +20,11 @@ chmod +x infrastructure/install_kubernetes.sh infrastructure/complete-gpu-setup.
 
 # Run Kubernetes installation
 echo "--- Running Kubernetes Installation ---"
-# It's assumed install_kubernetes.sh will either read these IPs from
-# environment variables or accept them as arguments.
-# Example if using environment variables:
 PUBLIC_IP="${PUBLIC_IP}" \
 PRIVATE_IP="${PRIVATE_IP}" \
 SSH_KEY_PATH="${SSH_KEY_PATH}" \
 SSH_USER="${SSH_USER}" \
-./infrastructure/install_kubernetes.sh
-# Example if using arguments:
-# ./install_kubernetes.sh "${PUBLIC_IP}" "${PRIVATE_IP}"
+bash ./infrastructure/install_kubernetes.sh
 
 if [ $? -eq 0 ]; then
     echo "Kubernetes installation completed successfully."
@@ -42,15 +37,11 @@ echo ""
 
 # Run GPU setup
 echo "--- Running GPU Setup ---"
-# Similarly, complete-gpu-setup.sh is assumed to handle IPs.
-# Example if using environment variables:
 PUBLIC_IP="${PUBLIC_IP}" \
 PRIVATE_IP="${PRIVATE_IP}" \
 SSH_KEY_PATH="${SSH_KEY_PATH}" \
 SSH_USER="${SSH_USER}" \
-./infrastructure/complete-gpu-setup.sh
-# Example if using arguments:
-# ./complete-gpu-setup.sh "${PUBLIC_IP}" "${PRIVATE_IP}"
+bash ./infrastructure/complete-gpu-setup.sh
 
 if [ $? -eq 0 ]; then
     echo "GPU setup completed successfully."
