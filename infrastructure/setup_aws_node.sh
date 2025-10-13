@@ -4,8 +4,8 @@ set -euo pipefail
 # --- Configuration ---
 # Set your AWS node's public and private IP addresses here.
 # These variables will be used by the setup scripts.
-PUBLIC_IP="YOUR_PUBLIC_IP_HERE"    # e.g., "54.123.45.67"
-PRIVATE_IP="YOUR_PRIVATE_IP_HERE"  # e.g., "172.31.0.10"
+PUBLIC_IP=3.22.171.17   # e.g., "54.123.45.67"
+PRIVATE_IP=172.31.45.181  # e.g., "172.31.0.10"
 # -------------------
 
 echo "Starting AWS Node setup with:"
