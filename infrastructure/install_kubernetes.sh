@@ -256,15 +256,11 @@ deploy_kubernetes() {
         exit 1
     fi
     
-    # Activate virtual environment if not already active
-    if [[ "$VIRTUAL_ENV" != *"kubespray-venv"* ]]; then
-        echo "Activating virtual environment..."
-        source kubespray-venv/bin/activate
-    fi
+    # We assume the script is already in KUBESPRAY_ROOT_DIR and venv is activated.
     
     # Verify inventory exists
     if [ ! -f "inventory/mycluster/inventory.ini" ]; then
-        echo "❌ Inventory file not found. Please run 03_configure_kubespray.sh first"
+        echo "❌ Inventory file not found. Please run configure_kubespray first"
         exit 1
     fi
     
@@ -313,35 +309,12 @@ deploy_kubernetes() {
         fi
     done
     
-    # Deploy Kubernetes cluster (modern Kubespray approach - no separate bootstrap needed)
-    echo "Deploying Kubernetes cluster (this may take 15-30 minutes)..."
-    echo "This will handle OS preparation and Kubernetes installation in one step..."
-    
-    ansible-playbook -i inventory/mycluster/inventory.ini \
-        --become --become-user=root \
-        cluster.yml
-    
-    if [ $? -eq 0 ]; then
-        echo "✅ Kubernetes deployment completed successfully!"
-        
-        # Copy kubeconfig from remote machine
-        echo "Copying kubeconfig from remote machine..."
-        mkdir -p ~/.kube
-        scp -i $SSH_KEY_PATH $SSH_USER@$AWS_INSTANCE_IP:/etc/kubernetes/admin.conf ~/.kube/config
-        
-        # Update kubeconfig to use public IP for external access
-        # The cluster will use private IP internally, but we need public IP for kubectl access
-        echo "Configuring kubeconfig for external access..."
-        sed -i.bak "s/127.0.0.1:6443/$AWS_INSTANCE_IP:6443/g" ~/.kube/config
-        sed -i.bak2 "s/172.31.13.107:6443/$AWS_INSTANCE_IP:6443/g" ~/.kube/config
-        
-        echo "Kubeconfig copied and configured for external access"
-        echo "✅ Cluster accessible via public IP: $AWS_INSTANCE_IP:6443"
-        echo ""
+    # If we reached here, deployment was successful (or max retries reached and returned 1)
+    if [ "$DEPLOY_SUCCESS" = true ]; then
         echo "✅ Deployment complete!"
+        return 0
     else
-        echo "❌ Kubernetes deployment failed"
-        echo "Check the Ansible output above for specific errors"
+        # Should already have returned 1, but explicitly for clarity
         return 1
     fi
 }
@@ -352,13 +325,13 @@ deploy_kubernetes
 # =============================================================================
 # SECTION 5: INSTALL AND CONFIGURE KUBECTL
 # =============================================================================
-echo "=== SECTION 5: Installing and Configuring kubectl ==="
+echo "=== SECTION 5: Installing and Configuring kubectl ==-"
 
 echo "Using SSH key: $SSH_KEY_PATH"
 echo "Connecting to: $SSH_USER@$AWS_INSTANCE_IP"
 
 # Test SSH connection first
-echo "=== TESTING SSH CONNECTION ==="
+echo "=== TESTING SSH CONNECTION ==-"
 ssh -i "$SSH_KEY_PATH" -o ConnectTimeout=10 -o StrictHostKeyChecking=no "$SSH_USER@$AWS_INSTANCE_IP" "echo 'SSH connection successful!'"
 
 if [ $? -ne 0 ]; then
@@ -370,7 +343,7 @@ echo "✅ SSH connection successful!"
 
 # Check if admin.conf exists and get its location
 echo ""
-echo "=== FINDING KUBECONFIG ON REMOTE MACHINE ==="
+echo "=== FINDING KUBECONFIG ON REMOTE MACHINE ==-"
 echo "Checking for kubeconfig files on remote machine..."
 
 ssh -i "$SSH_KEY_PATH" "$SSH_USER@$AWS_INSTANCE_IP" "
@@ -386,23 +359,23 @@ sudo docker ps 2>/dev/null | head -5 || sudo crictl ps 2>/dev/null | head -5 || 
 
 # Copy kubeconfig from remote machine
 echo ""
-echo "=== COPYING KUBECONFIG FROM REMOTE MACHINE ==="
+echo "=== COPYING KUBECONFIG FROM REMOTE MACHINE ==-"
 echo "Copying kubeconfig with proper sudo access..."
 
-# Ensure .kube directory exists
-mkdir -p ~/.kube
+# Ensure .kube directory exists in user's home
+mkdir -p "$HOME/.kube"
 
 # Backup existing config if it exists
-if [ -f ~/.kube/config ]; then
+if [ -f "$HOME/.kube/config" ]; then
     echo "Backing up existing kubeconfig..."
-    cp ~/.kube/config ~/.kube/config.backup.$(date +%Y%m%d_%H%M%S)
+    cp "$HOME/.kube/config" "$HOME/.kube/config.backup.$(date +%Y%m%d_%H%M%S)"
 fi
 
 # Copy the kubeconfig with proper sudo permissions
 echo "Copying admin.conf from remote machine..."
-ssh -i "$SSH_KEY_PATH" "$SSH_USER@$AWS_INSTANCE_IP" "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config
+ssh -i "$SSH_KEY_PATH" "$SSH_USER@$AWS_INSTANCE_IP" "sudo cat /etc/kubernetes/admin.conf" > "$HOME/.kube/config"
 
-if [ $? -eq 0 ] && [ -s ~/.kube/config ]; then
+if [ $? -eq 0 ] && [ -s "$HOME/.kube/config" ]; then
     echo "✅ Successfully copied kubeconfig"
 else
     echo "❌ Failed to copy kubeconfig or file is empty"
@@ -411,35 +384,35 @@ fi
 
 # Update kubeconfig for external access
 echo ""
-echo "=== CONFIGURING KUBECTL FOR EXTERNAL ACCESS ==="
+echo "=== CONFIGURING KUBECTL FOR EXTERNAL ACCESS ==-"
 echo "Updating kubeconfig to use external IP address..."
 
 # Replace internal IP addresses with external IP
-sed -i.backup "s/127.0.0.1:6443/$AWS_INSTANCE_IP:6443/g" ~/.kube/config
-sed -i.backup2 "s/$AWS_INSTANCE_PRIVATE_IP:6443/$AWS_INSTANCE_IP:6443/g" ~/.kube/config
+sed -i.bak "s/127.0.0.1:6443/$AWS_INSTANCE_IP:6443/g" "$HOME/.kube/config"
+sed -i.bak2 "s/${AWS_INSTANCE_PRIVATE_IP}:6443/${AWS_INSTANCE_IP}:6443/g" "$HOME/.kube/config"
 
 echo "Updated server endpoint to use external IP: $AWS_INSTANCE_IP:6443"
 
 # Configure TLS settings for external access
 echo "Setting insecure-skip-tls-verify for external cluster access..."
-kubectl config set-cluster cluster.local --server=https://$AWS_INSTANCE_IP:6443 --insecure-skip-tls-verify=true
+kubectl config set-cluster kubernetes --server=https://$AWS_INSTANCE_IP:6443 --insecure-skip-tls-verify=true --kubeconfig="$HOME/.kube/config"
 
 echo "✅ Configured kubectl for external cluster access"
 
 # Test kubectl connection
 echo ""
-echo "=== TESTING KUBECTL CONNECTION ==="
+echo "=== TESTING KUBECTL CONNECTION ==-"
 echo "Testing cluster connection..."
-kubectl get nodes
+kubectl get nodes --kubeconfig="$HOME/.kube/config"
 
 if [ $? -eq 0 ]; then
     echo "✅ kubectl successfully connected to cluster!"
     echo ""
     echo "Cluster details:"
-    kubectl get nodes -o wide
+    kubectl get nodes -o wide --kubeconfig="$HOME/.kube/config"
     echo ""
     echo "Cluster info:"
-    kubectl cluster-info
+    kubectl cluster-info --kubeconfig="$HOME/.kube/config"
 else
     echo "❌ kubectl connection failed"
     echo ""
@@ -447,5 +420,5 @@ else
     echo "• Type: Custom TCP, Port: 6443, Source: $(curl -s -4 ifconfig.me)/32"
     echo ""
     echo "Test connection manually:"
-    echo "kubectl get nodes --insecure-skip-tls-verify=true"
+    echo "kubectl get nodes --insecure-skip-tls-verify=true --kubeconfig=\"$HOME/.kube/config\""
 fi
