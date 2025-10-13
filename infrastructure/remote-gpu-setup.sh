@@ -6,9 +6,10 @@
 set -e
 
 # Configuration - Update these variables
-SSH_KEY_PATH="~/.ssh/aws-key-pair.pem"
-SSH_USER="ubuntu"
-NODE_IP="3.20.232.76" # Replace with your GPU node's public IP
+# Configuration - All necessary details are expected from environment variables.
+SSH_KEY_PATH="${SSH_KEY_PATH:?Error: SSH_KEY_PATH not set for remote-gpu-setup.sh}"
+SSH_USER="${SSH_USER:?Error: SSH_USER not set for remote-gpu-setup.sh}"
+NODE_IP="${GPU_NODE_IP:?Error: GPU_NODE_IP not set for remote-gpu-setup.sh}"
 
 echo "=== Remote GPU Setup Script ==="
 

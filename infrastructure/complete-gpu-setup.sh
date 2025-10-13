@@ -12,9 +12,13 @@ echo "2. Deploy the NVIDIA device plugin"
 echo "3. Test GPU functionality"
 echo ""
 
-# Configuration - Update these if needed
-SSH_KEY_PATH="~/.ssh/aws-key-pair.pem"
-SSH_USER="ubuntu"
+# Configuration - IP and SSH details are expected from environment variables.
+# Fallback to hardcoded values for direct script execution for SSH details if not provided.
+SSH_KEY_PATH="${SSH_KEY_PATH:-~/.ssh/aws-key-pair.pem}"
+SSH_USER="${SSH_USER:-ubuntu}"
+
+# Get the Public IP from the environment variable passed by setup_aws_node.sh
+PUBLIC_IP="${PUBLIC_IP:?Error: PUBLIC_IP not set for complete-gpu-setup.sh}"
 
 # Function to check if command succeeded
 check_success() {
@@ -44,6 +48,10 @@ check_success "Kubernetes cluster connection"
 
 echo ""
 echo "Phase 1: Remote GPU node configuration..."
+# Pass the necessary environment variables to remote-gpu-setup.sh
+GPU_NODE_IP="${PUBLIC_IP}" \
+SSH_KEY_PATH="${SSH_KEY_PATH}" \
+SSH_USER="${SSH_USER}" \
 ./remote-gpu-setup.sh
 check_success "Remote GPU node setup"
 
