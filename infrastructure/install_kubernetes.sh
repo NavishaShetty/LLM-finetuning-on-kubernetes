@@ -247,15 +247,6 @@ echo "=== SECTION 4: Deploying Kubernetes ==="
 deploy_kubernetes() {
     echo "Starting Kubernetes deployment with Kubespray..."
     
-    # Get the directory where this script is located
-    KUBESPRAY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    
-    # Check if kubespray directory exists
-    if [ ! -d "$KUBESPRAY_DIR" ]; then
-        echo "❌ Kubespray directory not found at: $KUBESPRAY_DIR"
-        exit 1
-    fi
-    
     # We assume the script is already in KUBESPRAY_ROOT_DIR and venv is activated.
     
     # Verify inventory exists
