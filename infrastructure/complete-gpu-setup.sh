@@ -13,9 +13,8 @@ echo "3. Test GPU functionality"
 echo ""
 
 # Configuration - IP and SSH details are expected from environment variables.
-# Fallback to hardcoded values for direct script execution for SSH details if not provided.
-SSH_KEY_PATH="${SSH_KEY_PATH:-~/.ssh/aws-key-pair.pem}"
-SSH_USER="${SSH_USER:-ubuntu}"
+SSH_KEY_PATH="${SSH_KEY_PATH:?Error: SSH_KEY_PATH not set for complete-gpu-setup.sh}"
+SSH_USER="${SSH_USER:?Error: SSH_USER not set for complete-gpu-setup.sh}"
 
 # Get the Public IP from the environment variable passed by setup_aws_node.sh
 PUBLIC_IP="${PUBLIC_IP:?Error: PUBLIC_IP not set for complete-gpu-setup.sh}"

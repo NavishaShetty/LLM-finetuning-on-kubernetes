@@ -8,8 +8,8 @@
 # Configuration - IP addresses are expected from environment variables set by setup_aws_node.sh
 AWS_INSTANCE_IP="${PUBLIC_IP:?Error: PUBLIC_IP not set for install_kubernetes.sh}"
 AWS_INSTANCE_PRIVATE_IP="${PRIVATE_IP:?Error: PRIVATE_IP not set for install_kubernetes.sh}"
-SSH_KEY_PATH="~/.ssh/aws-key-pair.pem"
-SSH_USER="ubuntu"
+SSH_KEY_PATH="${SSH_KEY_PATH:?Error: SSH_KEY_PATH not set for install_kubernetes.sh}"
+SSH_USER="${SSH_USER:?Error: SSH_USER not set for install_kubernetes.sh}"
 
 # =============================================================================
 # SECTION 1: TEST AWS MACHINE CONNECTION
