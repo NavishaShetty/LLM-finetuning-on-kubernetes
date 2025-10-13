@@ -2,7 +2,8 @@
 
 # =============================================================================
 # Kubernetes Setup with Kubespray on AWS G4DN Instance
-# Execute each section one by one as indicated
+# This script will install Kubespray on the local macOS machine,
+# configure it, and deploy Kubernetes to a single AWS node.
 # =============================================================================
 
 # Configuration - IP addresses are expected from environment variables set by setup_aws_node.sh
@@ -10,6 +11,10 @@ AWS_INSTANCE_IP="${PUBLIC_IP:?Error: PUBLIC_IP not set for install_kubernetes.sh
 AWS_INSTANCE_PRIVATE_IP="${PRIVATE_IP:?Error: PRIVATE_IP not set for install_kubernetes.sh}"
 SSH_KEY_PATH="${SSH_KEY_PATH:?Error: SSH_KEY_PATH not set for install_kubernetes.sh}"
 SSH_USER="${SSH_USER:?Error: SSH_USER not set for install_kubernetes.sh}"
+
+# Global path definitions
+SCRIPT_REAL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+KUBESPRAY_ROOT_DIR="$SCRIPT_REAL_DIR/kubespray"
 
 # =============================================================================
 # SECTION 1: TEST AWS MACHINE CONNECTION
@@ -40,10 +45,6 @@ echo "=== SECTION 2: Installing Kubespray on macOS ==="
 install_kubespray_macos() {
     echo "Installing prerequisites on macOS..."
     
-    # Get the directory where this script is located
-    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    echo "Script directory: $SCRIPT_DIR"
-    
     # Install Homebrew if not present
     if ! command -v brew &> /dev/null; then
         echo "Installing Homebrew..."
@@ -57,35 +58,38 @@ install_kubespray_macos() {
     # Install git if not present
     brew install git
     
-    # Change to script directory
-    cd "$SCRIPT_DIR"
+    # Ensure we are in the script's real directory for cloning
+    ( # Start a subshell to localize cd commands
+    cd "$SCRIPT_REAL_DIR"
     
     # Check if kubespray directory exists and remove it
     if [ -d "kubespray" ]; then
-        echo "Kubespray directory already exists in script directory, removing..."
+        echo "Kubespray directory already exists at $KUBESPRAY_ROOT_DIR, removing..."
         rm -rf kubespray
         echo "✅ Removed existing kubespray directory"
     fi
     
-    # Clone Kubespray repository in current directory
-    echo "Cloning Kubespray repository to script directory..."
+    # Clone Kubespray repository
+    echo "Cloning Kubespray repository to $KUBESPRAY_ROOT_DIR..."
     git clone https://github.com/kubernetes-sigs/kubespray.git
     
     if [ $? -eq 0 ]; then
         echo "✅ Successfully cloned Kubespray"
-        cd kubespray
     else
         echo "❌ Failed to clone Kubespray"
         exit 1
     fi
+
+    # Change into the kubespray directory to setup venv
+    cd "$KUBESPRAY_ROOT_DIR"
     
     # Setup Python virtual environment for Kubespray
-    echo "Setting up Python virtual environment..."
+    echo "Setting up Python virtual environment in $KUBESPRAY_ROOT_DIR..."
     
     # Create virtual environment
     python3 -m venv kubespray-venv
     
-    # Activate virtual environment
+    # Activate virtual environment (temporarily for installation in subshell)
     source kubespray-venv/bin/activate
     
     # Upgrade pip
@@ -99,26 +103,33 @@ install_kubespray_macos() {
     echo "Installing Kubespray Python requirements..."
     pip install -r requirements.txt
     
-    echo "✅ Kubespray installation completed"
-    echo "Current directory: $(pwd)"
-    echo "Kubespray installed in: $SCRIPT_DIR/kubespray"
-    echo ""
-    echo "IMPORTANT: Before proceeding to section 3, run:"
-    echo "cd $SCRIPT_DIR/kubespray && source kubespray-venv/bin/activate"
+    echo "✅ Kubespray installation completed in subshell."
+    echo "Kubespray installed in: $KUBESPRAY_ROOT_DIR"
     
-    # Verify installation
+    # Verify installation (within subshell context)
     echo ""
-    echo "=== VERIFYING INSTALLATION ==="
+    echo "=== VERIFYING KUBESPRAY INSTALLATION ==="
     ansible --version
     python3 -c "import ansible; print('Ansible Python module: OK')"
     
     if [ $? -eq 0 ]; then
-        echo "✅ Installation verification successful!"
-        echo "You can now proceed to section 3 (configure_kubespray)"
+        echo "✅ Kubespray installation verification successful!"
     else
-        echo "❌ Installation verification failed"
+        echo "❌ Kubespray installation verification failed in subshell"
         echo "Please check the error messages above"
+        exit 1 # Exit subshell on failure
     fi
+    ) # End of subshell
+
+    # After subshell, activate venv in main shell for subsequent sections
+    echo "Activating Kubespray virtual environment in main shell: $KUBESPRAY_ROOT_DIR/kubespray-venv/bin/activate"
+    source "$KUBESPRAY_ROOT_DIR/kubespray-venv/bin/activate"
+
+    # Now change to the Kubespray root directory for the remainder of the script
+    echo "Changing current directory to Kubespray root: $KUBESPRAY_ROOT_DIR"
+    cd "$KUBESPRAY_ROOT_DIR"
+
+    echo "You can now proceed to section 3 (configure_kubespray)"
 }
 
 # Execute this function
@@ -132,20 +143,12 @@ echo "=== SECTION 3: Configuring Kubespray for AWS Instance ==="
 configure_kubespray() {
     echo "Configuring Kubespray for single-node AWS deployment..."
     
-    # Get the directory where this script is located
-    KUBESPRAY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-    
-    # Check if kubespray directory exists
-    if [ ! -d "$KUBESPRAY_DIR" ]; then
-        echo "❌ Kubespray directory not found at: $KUBESPRAY_DIR"
-        echo "Please run 02_install_kubespray.sh first"
+    # We assume the script is already in KUBESPRAY_ROOT_DIR and venv is activated.
+    # Check if inventory directory exists (part of kubespray clone)
+    if [ ! -d "inventory/sample" ]; then
+        echo "❌ Kubespray inventory/sample directory not found. Expected in current directory: $(pwd)"
+        echo "Ensure Kubespray was cloned correctly and the script is running from \$KUBESPRAY_ROOT_DIR."
         exit 1
-    fi
-    
-    # Activate virtual environment if not already active
-    if [[ "$VIRTUAL_ENV" != *"kubespray-venv"* ]]; then
-        echo "Activating virtual environment..."
-        source kubespray-venv/bin/activate
     fi
     
     # Copy sample inventory
