@@ -5,10 +5,11 @@
 # Execute each section one by one as indicated
 # =============================================================================
 
-AWS_INSTANCE_IP="3.20.232.76"
-AWS_INSTANCE_PRIVATE_IP="172.31.35.196" 
-SSH_KEY_PATH="~/.ssh/aws-key-pair.pem" 
-SSH_USER="ubuntu"  
+# Configuration - IP addresses are expected from environment variables set by setup_aws_node.sh
+AWS_INSTANCE_IP="${PUBLIC_IP:?Error: PUBLIC_IP not set for install_kubernetes.sh}"
+AWS_INSTANCE_PRIVATE_IP="${PRIVATE_IP:?Error: PRIVATE_IP not set for install_kubernetes.sh}"
+SSH_KEY_PATH="~/.ssh/aws-key-pair.pem"
+SSH_USER="ubuntu"
 
 # =============================================================================
 # SECTION 1: TEST AWS MACHINE CONNECTION
