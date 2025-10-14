@@ -50,6 +50,7 @@ check_success "Kubernetes cluster connection"
 
 echo ""
 echo "Phase 1: Remote GPU node configuration..."
+cd "$SCRIPT_DIR"
 # Pass the necessary environment variables to remote-gpu-setup.sh
 NODE_IP="${PUBLIC_IP}" \
 SSH_KEY_PATH="${SSH_KEY_PATH}" \

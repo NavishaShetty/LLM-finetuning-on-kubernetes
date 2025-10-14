@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-api-tinyllama
+  labels:
+    app: llm-api
+    version: tinyllama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-api
+      version: tinyllama
+  template:
+    metadata:
+      labels:
+        app: llm-api
+        version: tinyllama
+    spec:
+      runtimeClassName: nvidia
+      containers:
+      - name: llm-server
+        image: ghcr.io/navghcr.io/navishashetty/llm-api:v1
+        imagePullPolicy: Always
+        env:
+        - name: MODEL_NAME
+          value: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+        resources:
+          limits:
+            nvidia.com/gpu: "1"
+            memory: "4Gi"
+            cpu: "2"
+          requests:
+            nvidia.com/gpu: "1"
+            memory: "2Gi"
+            cpu: "1"
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 90
+          periodSeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llm-api-service
+spec:
+  selector:
+    app: llm-api
+  ports:
+  - port: 80
+    targetPort: 8000
+  type: NodePort

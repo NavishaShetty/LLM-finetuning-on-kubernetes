@@ -5,6 +5,9 @@
 
 set -e
 
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 # Configuration - Update these variables
 # Configuration - All necessary details are expected from environment variables.
 SSH_KEY_PATH="${SSH_KEY_PATH:?Error: SSH_KEY_PATH not set for remote-gpu-setup.sh}"
@@ -33,7 +36,7 @@ check_success "SSH connection test"
 
 echo ""
 echo "Step 2: Copying gpu-node-setup.sh to remote node..."
-scp -i "$SSH_KEY_PATH_EXPANDED" gpu-node-setup.sh "$SSH_USER@$NODE_IP:/tmp/"
+scp -i "$SSH_KEY_PATH_EXPANDED" "$SCRIPT_DIR/gpu-node-setup.sh" "$SSH_USER@$NODE_IP:/tmp/"
 check_success "Script copy to remote node"
 
 echo ""

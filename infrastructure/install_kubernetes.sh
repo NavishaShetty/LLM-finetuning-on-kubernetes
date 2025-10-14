@@ -230,10 +230,10 @@ local_volume_provisioner_storage_classes:
 EOF
 
     echo "✅ Kubespray configuration completed"
-    echo "Configuration files created in: $KUBESPRAY_DIR/inventory/mycluster/"
+    echo "Configuration files created in: $KUBESPRAY_ROOT_DIR/inventory/mycluster/"
     echo ""
     echo "Configuration summary:"
-    echo "- Kubespray directory: $KUBESPRAY_DIR"
+    echo "- Kubespray directory: $KUBESPRAY_ROOT_DIR"
 }
 
 # Execute this function
@@ -386,7 +386,7 @@ echo "Updated server endpoint to use external IP: $AWS_INSTANCE_IP:6443"
 
 # Configure TLS settings for external access
 echo "Setting insecure-skip-tls-verify for external cluster access..."
-kubectl config set-cluster kubernetes --server=https://$AWS_INSTANCE_IP:6443 --insecure-skip-tls-verify=true --kubeconfig="$HOME/.kube/config"
+kubectl config set-cluster cluster.local --server=https://$AWS_INSTANCE_IP:6443 --insecure-skip-tls-verify=true --kubeconfig="$HOME/.kube/config"
 
 echo "✅ Configured kubectl for external cluster access"
 
