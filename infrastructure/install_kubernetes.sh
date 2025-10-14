@@ -404,7 +404,7 @@ if [ $? -eq 0 ]; then
     echo ""
     echo "Cluster info:"
     kubectl cluster-info --kubeconfig="$HOME/.kube/config"
-    return 0 # Indicate success
+    exit 0 # Indicate success
 else
     echo "❌ kubectl connection failed"
     echo ""
@@ -414,5 +414,5 @@ else
     echo ""
     echo "You can test the connection manually from your local machine with:"
     echo "kubectl get nodes --insecure-skip-tls-verify=true --kubeconfig=\"$HOME/.kube/config\""
-    return 1 # Indicate failure
+    exit 1 # Indicate failure
 fi
