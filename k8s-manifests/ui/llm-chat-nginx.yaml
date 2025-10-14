@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-ui
+  template:
+    metadata:
+      labels:
+        app: llm-ui
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html
+        configMap:
+          name: llm-ui-html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llm-ui-service
+spec:
+  selector:
+    app: llm-ui
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort

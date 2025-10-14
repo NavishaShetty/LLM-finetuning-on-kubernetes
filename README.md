@@ -74,12 +74,28 @@ Unlike toy examples, this demonstrates:
 - ✅ Improved task completion
 - ✅ Reduced hallucination on structured tasks
 
+## Repository Structure
+
+├── infrastructure/      # Kubernetes cluster setup scripts
+├── training/           # Fine-tuning code and Dockerfile
+├── k8s-manifests/      # Kubernetes resource definitions
+├── inference/          # Production API service
+├── ui/                 # Chat interface
+├── scripts/            # Automation scripts
+└── docs/              # Detailed documentation
+
 ## Quick Start
 ```bash
-# 1. Set up Kubernetes cluster with GPU support
-./infrastructure/complete-gpu-setup.sh
+# 1. Go to infrastructure/setup_aws_node.sh and replace the following values:
+PUBLIC_IP="YOUR PUBLIC IP"       # e.g., "54.123.45.67"
+PRIVATE_IP="YOUR PRIVATE IP"    # e.g., "172.31.0.10"
+SSH_KEY_PATH="ssh key path"     # Path to your AWS SSH key
+SSH_USER="ubuntu"
 
-# 2. Build and push training image
+#2. Set up Kubernetes cluster with GPU support
+./infrastructure/setup_aws_node.sh
+
+# 3. Build and push training image
 ./scripts/push-training-image.sh
 
 # 3. Submit training job

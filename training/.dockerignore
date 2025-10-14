@@ -1,0 +1,14 @@
+touch training/.dockerignore
+```
+
+**Add this content:**
+```
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.git/
+.gitignore
+*.md
