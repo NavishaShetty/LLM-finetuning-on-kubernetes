@@ -5,15 +5,17 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: fast-disks
   resources:
     requests:
-      storage: 10Gi
+      storage: 50Gi
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
   name: tinyllama-finetune-alpaca
 spec:
+  backoffLimit: 3
   template:
     metadata:
       labels:
@@ -39,6 +41,15 @@ spec:
         env:
         - name: OUTPUT_DIR
           value: "/models/tinyllama-alpaca-finetuned"
+        - name: HF_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: huggingface-token
+              key: token
+        - name: HF_REPO
+          value: "shettynavisha25/tinyllama-alpaca-finetuned"
+        - name: TRANSFORMERS_CACHE
+          value: "/models/.cache"
       volumes:
       - name: models
         persistentVolumeClaim:
