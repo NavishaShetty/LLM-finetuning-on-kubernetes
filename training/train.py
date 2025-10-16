@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Fine-tune TinyLlama on Alpaca dataset using QLoRA
+With checkpoint recovery and Hugging Face Hub integration
 """
 
 import os
@@ -27,7 +28,11 @@ GRADIENT_ACCUMULATION_STEPS = 4
 LEARNING_RATE = 2e-4
 NUM_EPOCHS = 3
 LOGGING_STEPS = 10
-SAVE_STEPS = 100
+SAVE_STEPS = 500
+
+# Hugging Face Hub configuration
+HF_TOKEN = os.getenv("HF_TOKEN") 
+HF_REPO = os.getenv("HF_REPO", "shettynavisha25/tinyllama-alpaca-finetuned")
 
 print("=" * 80)
 print("TinyLlama Fine-Tuning with QLoRA on Alpaca Dataset")
@@ -36,14 +41,31 @@ print(f"Model: {MODEL_NAME}")
 print(f"Dataset: {DATASET_NAME}")
 print(f"Output: {OUTPUT_DIR}")
 print(f"Device: {'cuda' if torch.cuda.is_available() else 'cpu'}")
+if HF_TOKEN:
+    print(f"Hugging Face: Will push to {HF_REPO}")
+else:
+    print("Hugging Face: Push disabled (no HF_TOKEN)")
 print("=" * 80)
+
+# Check for existing checkpoints (for resume capability)
+checkpoint = None
+if os.path.exists(OUTPUT_DIR):
+    checkpoints = [d for d in os.listdir(OUTPUT_DIR) if d.startswith("checkpoint-")]
+    if checkpoints:
+        # Sort by checkpoint number and get the latest
+        checkpoints.sort(key=lambda x: int(x.split("-")[1]))
+        checkpoint = os.path.join(OUTPUT_DIR, checkpoints[-1])
+        print(f"\nRESUMING FROM CHECKPOINT")
+        print(f"   Found checkpoint: {checkpoint}")
+        print(f"   Training will continue from this point...")
+        print("=" * 80)
 
 # Load tokenizer
 print("\n[1/6] Loading tokenizer...")
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"
-print("✅ Tokenizer loaded")
+print("Tokenizer loaded")
 
 # Load model with 4-bit quantization
 print("\n[2/6] Loading model with 4-bit quantization...")
@@ -54,12 +76,12 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
     trust_remote_code=True
 )
-print("✅ Model loaded")
+print("Model loaded")
 
 # Prepare model for training
 print("\n[3/6] Preparing model for k-bit training...")
 model = prepare_model_for_kbit_training(model)
-print("✅ Model prepared")
+print("Model prepared")
 
 # Configure LoRA
 print("\n[4/6] Configuring LoRA...")
@@ -79,7 +101,7 @@ lora_config = LoraConfig(
 
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
-print("✅ LoRA configured")
+print("LoRA configured")
 
 # Load and prepare dataset
 print("\n[5/6] Loading Alpaca dataset...")
@@ -117,9 +139,9 @@ tokenized_dataset = dataset.map(
     remove_columns=["text"]
 )
 
-# Use a subset for faster training (optional - remove for full dataset)
+# Use full training dataset
 train_dataset = tokenized_dataset["train"]
-print(f"✅ Dataset loaded: {len(train_dataset)} training samples")
+print(f"Dataset loaded: {len(train_dataset)} training samples")
 
 # Training arguments
 print("\n[6/6] Setting up training...")
@@ -131,11 +153,24 @@ training_args = TrainingArguments(
     learning_rate=LEARNING_RATE,
     fp16=True,
     logging_steps=LOGGING_STEPS,
-    save_steps=SAVE_STEPS,
-    save_total_limit=2,
-    push_to_hub=False,
-    report_to="none",
-    optim="paged_adamw_8bit"
+    
+    # CHECKPOINT SETTINGS (for crash recovery)
+    save_strategy="steps",
+    save_steps=SAVE_STEPS,              # Save every 500 steps (~40 min)
+    save_total_limit=3,                 # Keep last 3 checkpoints on EBS
+    load_best_model_at_end=False,       # Don't need best model for this task
+    
+    # PUSH TO HUB SETTINGS (for final model upload)
+    push_to_hub=bool(HF_TOKEN),         # Only if token provided
+    hub_model_id=HF_REPO if HF_TOKEN else None,
+    hub_strategy="end",                 # Only push final model (not checkpoints)
+    hub_token=HF_TOKEN,
+    
+    # Other settings
+    gradient_checkpointing=True,        # Save memory
+    report_to="none",                   # Disable wandb/tensorboard
+    optim="paged_adamw_8bit",
+    warmup_steps=100,
 )
 
 # Data collator
@@ -152,28 +187,40 @@ trainer = Trainer(
     data_collator=data_collator
 )
 
-# Start training
+# Start training (with resume capability)
 print("\n" + "=" * 80)
 print("STARTING TRAINING")
 print("=" * 80)
 print(f"Start time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-print(f"Expected duration: ~3-4 hours on T4 GPU")
+print(f"Expected duration: ~11-13 hours on T4 GPU")
+if checkpoint:
+    print(f"Resuming from: {checkpoint}")
 print("=" * 80 + "\n")
 
-trainer.train()
+# Train with checkpoint resume
+trainer.train(resume_from_checkpoint=checkpoint)
 
 print("\n" + "=" * 80)
 print("TRAINING COMPLETE!")
 print("=" * 80)
 
-# Save the model
+# Save the final model locally
 print(f"\nSaving fine-tuned model to {OUTPUT_DIR}...")
 model.save_pretrained(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
-print("✅ Model saved successfully!")
+print("Model saved locally!")
+
+# Push to Hub happens automatically if push_to_hub=True
+if HF_TOKEN:
+    print(f"\nModel automatically pushed to Hugging Face Hub")
+    print(f"View at: https://huggingface.co/{HF_REPO}")
+else:
+    print("\nTo push to Hugging Face, set HF_TOKEN environment variable")
 
 print("\n" + "=" * 80)
 print("Fine-tuning completed successfully!")
-print(f"Model location: {OUTPUT_DIR}")
+print(f"Model location (local): {OUTPUT_DIR}")
+if HF_TOKEN:
+    print(f"Model location (Hub): https://huggingface.co/{HF_REPO}")
 print(f"End time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print("=" * 80)
