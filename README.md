@@ -95,14 +95,17 @@ SSH_USER="ubuntu"
 #2. Set up Kubernetes cluster with GPU support
 ./infrastructure/setup_aws_node.sh
 
-# 3. Build and push training image
-./scripts/push-training-image.sh
+# 3. Deploy model-pv.yaml to create Persistant Volume
+kubectl apply -f models-pv.yaml
+kubectl get pv
 
-# 3. Submit training job
+# 4. Create kubernetes secrets
+kubectl create secret generic huggingface-token \
+  --from-literal=token='hf_YOUR_ACTUAL_TOKEN' \
+  --from-literal=repo='shettynavisha25/tinyllama-alpaca-finetuned'
+
+# 5. Submit training job
 kubectl apply -f k8s-manifests/training-job.yaml
 
-# 4. Monitor training
+# 6. Monitor training
 kubectl logs -f job/tinyllama-finetune-alpaca
-
-# 5. Deploy fine-tuned model
-kubectl apply -f k8s-manifests/inference/deployment-finetuned.yaml

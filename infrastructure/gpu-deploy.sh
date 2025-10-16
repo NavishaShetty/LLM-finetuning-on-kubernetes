@@ -80,6 +80,7 @@ kubectl logs -n kube-system -l name=nvidia-device-plugin-ds --tail=10
 
 echo ""
 echo "Step 8: Verifying GPU resources are available..."
+sleep 20
 GPU_RESOURCES=$(kubectl describe nodes | grep "nvidia.com/gpu" | head -1)
 if [[ $GPU_RESOURCES == *"nvidia.com/gpu"* ]]; then
     echo "✅ GPU resources detected:"

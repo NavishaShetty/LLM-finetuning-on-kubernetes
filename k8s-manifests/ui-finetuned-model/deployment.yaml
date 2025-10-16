@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-ui-finetuned
+  labels:
+    app: llm-ui
+    version: finetuned
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-ui
+      version: finetuned
+  template:
+    metadata:
+      labels:
+        app: llm-ui
+        version: finetuned
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: html
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html
+        configMap:
+          name: llm-ui-finetuned-html
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: llm-ui-finetuned-service
+  labels:
+    app: llm-ui
+    version: finetuned
+spec:
+  selector:
+    app: llm-ui
+    version: finetuned
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort
