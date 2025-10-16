@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-api-finetuned
+  labels:
+    app: llm-api
+    version: finetuned
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-api
+      version: finetuned
+  template:
+    metadata:
+      labels:
+        app: llm-api
+        version: finetuned
+    spec:
+      runtimeClassName: nvidia
+      containers:
+      - name: llm-server
+        image: ghcr.io/navishashetty/llm-api-finetuned:v1
+        imagePullPolicy: Always
+        env:
+        - name: MODEL_NAME
+          value: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+        - name: FINETUNED_MODEL
+          value: "shettynavisha25/tinyllama-alpaca-finetuned"
+        resources:
+          limits:
+            nvidia.com/gpu: "1"
+            memory: "4Gi"
+            cpu: "2"
+          requests:
+            nvidia.com/gpu: "1"
+            memory: "2Gi"
+            cpu: "1"
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 120
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 150
+          periodSeconds: 30

@@ -1,0 +1,321 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: llm-ui-finetuned-html
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fine-tuned TinyLlama Chat</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            .container {
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                max-width: 800px;
+                width: 100%;
+                overflow: hidden;
+            }
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 30px;
+                text-align: center;
+            }
+            .header h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            .header p {
+                opacity: 0.9;
+                font-size: 14px;
+            }
+            .badge {
+                display: inline-block;
+                background: rgba(255,255,255,0.2);
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+            .chat-container {
+                height: 500px;
+                overflow-y: auto;
+                padding: 30px;
+                background: #f7f7f7;
+            }
+            .message {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: flex-start;
+            }
+            .message.user {
+                flex-direction: row-reverse;
+            }
+            .message-content {
+                max-width: 70%;
+                padding: 15px 20px;
+                border-radius: 18px;
+                line-height: 1.5;
+            }
+            .message.user .message-content {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border-bottom-right-radius: 4px;
+            }
+            .message.bot .message-content {
+                background: white;
+                color: #333;
+                border-bottom-left-radius: 4px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .input-container {
+                padding: 25px;
+                background: white;
+                border-top: 1px solid #e0e0e0;
+            }
+            .input-row {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+            #promptInput {
+                flex: 1;
+                padding: 15px;
+                border: 2px solid #e0e0e0;
+                border-radius: 12px;
+                font-size: 16px;
+                transition: border-color 0.3s;
+            }
+            #promptInput:focus {
+                outline: none;
+                border-color: #667eea;
+            }
+            button {
+                padding: 15px 30px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                border-radius: 12px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: transform 0.2s, opacity 0.3s;
+            }
+            button:hover {
+                transform: translateY(-2px);
+            }
+            button:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                transform: none;
+            }
+            .controls {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 10px;
+            }
+            .control-group {
+                flex: 1;
+            }
+            label {
+                display: block;
+                font-size: 12px;
+                color: #666;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+            input[type="range"] {
+                width: 100%;
+                padding: 8px;
+            }
+            .loading {
+                text-align: center;
+                padding: 20px;
+                color: #666;
+            }
+            .spinner {
+                border: 3px solid #f3f3f3;
+                border-top: 3px solid #667eea;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                animation: spin 1s linear infinite;
+                margin: 0 auto;
+            }
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            .status {
+                font-size: 12px;
+                color: #666;
+                text-align: center;
+                padding: 10px;
+            }
+            .status.success { color: #4caf50; }
+            .status.error { color: #f44336; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🎓 Fine-tuned TinyLlama</h1>
+                <p>Instruction-Following Model</p>
+                <span class="badge">✨ Trained on 52K Alpaca Instructions</span>
+            </div>
+            
+            <div class="chat-container" id="chatContainer">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hi! I'm a fine-tuned version of TinyLlama, trained on 52,000 instruction-following examples. I can help you with tasks, answer questions, write content, and more. What can I help you with today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-container">
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="maxLength">Max Length: <span id="maxLengthValue">150</span></label>
+                        <input type="range" id="maxLength" min="50" max="500" value="150">
+                    </div>
+                    <div class="control-group">
+                        <label for="temperature">Temperature: <span id="temperatureValue">0.7</span></label>
+                        <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7">
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <input 
+                        type="text" 
+                        id="promptInput" 
+                        placeholder="Give me an instruction or ask a question..."
+                        onkeypress="if(event.key==='Enter') sendMessage()"
+                    >
+                    <button onclick="sendMessage()" id="sendBtn">Send</button>
+                </div>
+                
+                <div class="status" id="status">Connecting...</div>
+            </div>
+        </div>
+
+        <script>
+            // API URL - will be updated dynamically after deployment
+            const API_BASE = window.location.hostname;
+            const API_PORT = 'API_PORT_PLACEHOLDER'; // Will be replaced after deployment
+            const API_URL = `http://${API_BASE}:${API_PORT}`;
+            
+            const maxLengthSlider = document.getElementById('maxLength');
+            const temperatureSlider = document.getElementById('temperature');
+            const maxLengthValue = document.getElementById('maxLengthValue');
+            const temperatureValue = document.getElementById('temperatureValue');
+            
+            maxLengthSlider.oninput = function() {
+                maxLengthValue.textContent = this.value;
+            }
+            
+            temperatureSlider.oninput = function() {
+                temperatureValue.textContent = this.value;
+            }
+            
+            async function sendMessage() {
+                const input = document.getElementById('promptInput');
+                const chatContainer = document.getElementById('chatContainer');
+                const sendBtn = document.getElementById('sendBtn');
+                const status = document.getElementById('status');
+                const prompt = input.value.trim();
+                
+                if (!prompt) return;
+                
+                addMessage(prompt, 'user');
+                input.value = '';
+                sendBtn.disabled = true;
+                
+                const loadingDiv = document.createElement('div');
+                loadingDiv.className = 'loading';
+                loadingDiv.innerHTML = '<div class="spinner"></div><p>Thinking...</p>';
+                chatContainer.appendChild(loadingDiv);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                
+                try {
+                    const response = await fetch(`${API_URL}/generate`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            prompt: prompt,
+                            max_length: parseInt(maxLengthSlider.value),
+                            temperature: parseFloat(temperatureSlider.value)
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`API returned ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    loadingDiv.remove();
+                    addMessage(data.generated_text, 'bot');
+                    
+                    status.textContent = `⚡ Generated in ${data.generation_time.toFixed(2)}s on ${data.device}`;
+                    status.className = 'status success';
+                    
+                } catch (error) {
+                    loadingDiv.remove();
+                    addMessage('Sorry, there was an error. Please try again.', 'bot');
+                    status.textContent = '❌ Error: ' + error.message;
+                    status.className = 'status error';
+                } finally {
+                    sendBtn.disabled = false;
+                }
+            }
+            
+            function addMessage(text, sender) {
+                const chatContainer = document.getElementById('chatContainer');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                messageDiv.innerHTML = `<div class="message-content">${escapeHtml(text)}</div>`;
+                chatContainer.appendChild(messageDiv);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+            
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+            
+            // Check API health on load
+            async function checkHealth() {
+                try {
+                    const response = await fetch(`${API_URL}/health`);
+                    const data = await response.json();
+                    document.getElementById('status').textContent = '✓ Connected to fine-tuned model';
+                    document.getElementById('status').className = 'status success';
+                } catch (error) {
+                    document.getElementById('status').textContent = '⚠ Waiting for API... (Check NodePort)';
+                    document.getElementById('status').className = 'status error';
+                }
+            }
+            
+            checkHealth();
+        </script>
+    </body>
+    </html>
