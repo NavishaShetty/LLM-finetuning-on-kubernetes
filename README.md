@@ -24,50 +24,8 @@ while keeping inference services running concurrently.
 ## Architecture
 
 Transform a base language model into a conversational AI through Kubernetes-orchestrated training:
+<img width="388" height="583" alt="image" src="https://github.com/user-attachments/assets/edf31802-c7a7-46d7-a656-460091787f2f" />
 
-
-AWS G4DN Instance (Tesla T4 GPU, 32GB RAM)
-    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                                      │
-                        Kubernetes Cluster (Kubespray)
-                                      │
-            ┌─────────────────────────┼─────────────────────────┐
-            │                         │                         │
-            ▼                         ▼                         ▼
-    ┌───────────────┐        ┌───────────────┐        ┌───────────────┐
-    │   TRAINING    │        │  BASE MODEL   │        │  FINE-TUNED   │
-    │     JOB       │        │   INFERENCE   │        │   INFERENCE   │
-    ├───────────────┤        ├───────────────┤        ├───────────────┤
-    │ • QLoRA       │        │ • TinyLlama   │        │ • TinyLlama   │
-    │ • GPU: 1      │        │ • GPU: 1      │        │   + LoRA      │
-    │ • Mem: 8Gi    │        │ • Mem: 2Gi    │        │ • GPU: 1      │
-    │ • Alpaca      │        │ • FastAPI     │        │ • Mem: 2Gi    │
-    │   Dataset     │        │               │        │ • FastAPI     │
-    └───────┬───────┘        └───────────────┘        └───────────────┘
-            │                         │                         │
-            │                         └────────┬────────────────┘
-            │                                  │
-            ▼                                  ▼
-    ┌───────────────┐                ┌────────────────┐
-    │ PERSISTENT    │                │  NVIDIA GPU    │
-    │   VOLUME      │                │ DEVICE PLUGIN  │
-    ├───────────────┤                └────────────────┘
-    │ • EBS 50Gi    │                         │
-    │ • Checkpoints │                         │
-    │ • Artifacts   │        ┌────────────────┴────────────────┐
-    └───────┬───────┘        │                                 │
-            │                ▼                                 ▼
-            │        ┌───────────────┐                ┌───────────────┐
-            │        │   WEB UI      │                │  USER BROWSER │
-            │        │  (Nginx)      │◄───────────────┤               │
-            │        └───────────────┘                └───────────────┘
-            │
-            ▼
-    ┌───────────────┐
-    │ HUGGING FACE  │
-    │     HUB       │
-    │ (Model Store) │
-    └───────────────┘
 
 External Services:
   🤗 Hugging Face Hub ◄──► Training Job (push/pull models)
