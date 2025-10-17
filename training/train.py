@@ -5,6 +5,7 @@ With checkpoint recovery and Hugging Face Hub integration
 """
 
 import os
+import sys
 import torch
 from transformers import (
     AutoModelForCausalLM,
@@ -13,6 +14,7 @@ from transformers import (
     Trainer,
     DataCollatorForLanguageModeling
 )
+from huggingface_hub import HfApi, login
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from datasets import load_dataset
 import transformers
@@ -206,16 +208,41 @@ print("=" * 80)
 
 # Save the final model locally
 print(f"\nSaving fine-tuned model to {OUTPUT_DIR}...")
-model.save_pretrained(OUTPUT_DIR)
-tokenizer.save_pretrained(OUTPUT_DIR)
-print("Model saved locally!")
+try: 
+    model.save_pretrained(OUTPUT_DIR)
+    tokenizer.save_pretrained(OUTPUT_DIR)
+    print("Model saved locally!")
+except Exception as e:
+    print(f"Error saving model locally: {e}")
+    sys.exit(1)
 
 # Push to Hub happens automatically if push_to_hub=True
 if HF_TOKEN:
-    print(f"\nModel automatically pushed to Hugging Face Hub")
-    print(f"View at: https://huggingface.co/{HF_REPO}")
-else:
-    print("\nTo push to Hugging Face, set HF_TOKEN environment variable")
+    print(f"\n Pushing model to Hugging Face Hub...")
+    print(f"   Repository: {HF_REPO}")
+    
+    try:
+        # Login first
+        print("   Authenticating...")
+        login(token=HF_TOKEN, add_to_git_credential=False)
+        
+        # Push the model
+        print("   Uploading files...")
+        api = HfApi()
+        api.upload_folder(
+            folder_path=OUTPUT_DIR,
+            repo_id=HF_REPO,
+            repo_type="model",
+            commit_message="Fine-tuned TinyLlama on Alpaca dataset"
+        )
+        
+        print(f"Model successfully pushed to HuggingFace!")
+        print(f"View at: https://huggingface.co/{HF_REPO}")
+        
+    except Exception as e:
+        print(f"Failed to push to HuggingFace: {e}")
+        print(f" Error type: {type(e).__name__}")
+        print(f"\n Model is still saved locally at: {OUTPUT_DIR}")
 
 print("\n" + "=" * 80)
 print("Fine-tuning completed successfully!")

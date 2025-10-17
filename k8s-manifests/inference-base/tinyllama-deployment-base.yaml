@@ -20,7 +20,7 @@ spec:
       runtimeClassName: nvidia
       containers:
       - name: llm-server
-        image: ghcr.io/navghcr.io/navishashetty/llm-api:v1
+        image: ghcr.io/ghcr.io/navishashetty/llm-api:v1
         imagePullPolicy: Always
         env:
         - name: MODEL_NAME
