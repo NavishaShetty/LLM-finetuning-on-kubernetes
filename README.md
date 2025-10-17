@@ -1,14 +1,15 @@
 # Fine-Tuning LLM with Kubernetes
 
+An end-to-end production-grade pipeline for fine-tuning Large Language Models (LLMs) 
+using Kubernetes orchestration, demonstrating modern MLOps practices with GPU infrastructure.
+
+---
 <div align="center">
   <img src="https://img.shields.io/badge/Fine--tuning-QLoRA-FF6B6B" alt="QLoRA" />
   <img src="https://img.shields.io/badge/Model-TinyLlama%201.1B-purple" alt="TinyLlama" />
   <img src="https://img.shields.io/badge/Dataset-Alpaca%2052K-orange" alt="Alpaca" />
   <img src="https://img.shields.io/badge/HuggingFace-Model%20Hub-FFD21E?logo=huggingface&logoColor=black" alt="HuggingFace" />
 </div>
-
-An end-to-end production-grade pipeline for fine-tuning Large Language Models (LLMs) 
-using Kubernetes orchestration, demonstrating modern MLOps practices with GPU infrastructure.
 
 ## Project Overview
 
