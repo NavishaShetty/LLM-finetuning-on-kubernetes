@@ -155,7 +155,7 @@ Access in browser:
 - **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30557`
 - **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31234`
 
-Fine-tuned Model: `https://huggingface.co/shettynavisha25/tinyllama-alpaca-finetuned`
+- **Fine-tuned Model**: `https://huggingface.co/shettynavisha25/tinyllama-alpaca-finetuned`
 
 ## Acknowledgments
 
