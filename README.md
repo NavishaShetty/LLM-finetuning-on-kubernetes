@@ -26,35 +26,43 @@ while keeping inference services running concurrently.
 Transform a base language model into a conversational AI through Kubernetes-orchestrated training:
 
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃          AWS G4DN Instance (Tesla T4 GPU, 32GB RAM)         ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-                              │
-              ┌───────────────┴───────────────┐
-              │   Kubernetes Cluster (k8s)    │
-              └───────────────┬───────────────┘
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        │                     │                     │
-   ╔════▼═════╗         ╔════▼═════╗         ╔════▼═════╗
-   ║ Training ║         ║   Base   ║         ║ Fine-    ║
-   ║   Job    ║         ║  Model   ║         ║  tuned   ║
-   ║ (QLoRA)  ║         ║   API    ║         ║  Model   ║
-   ╠══════════╣         ╠══════════╣         ╠══════════╣
-   ║ GPU: 1   ║         ║ GPU: 1   ║         ║ GPU: 1   ║
-   ║ Mem: 8Gi ║         ║ Mem: 2Gi ║         ║ Mem: 2Gi ║
-   ╚═════╤════╝         ╚══════════╝         ╚═════╤════╝
-         │                                          │
-         │              ┌──────────┐                │
-         └──────────────► Storage  ◄────────────────┘
-                        │ EBS 50Gi │
-                        │(PV/PVC)  │
-                        └──────────┘
-                              │
-                   ┌──────────┴──────────┐
-                   │  NVIDIA GPU Plugin  │
-                   │   (DaemonSet)       │
-                   └─────────────────────┘
+graph TB
+    subgraph "AWS G4DN Instance (Tesla T4 GPU, 32GB RAM)"
+        subgraph "Kubernetes Cluster"
+            subgraph "ML Workloads"
+                Train[Training Job<br/>QLoRA Fine-tuning<br/>GPU: 1 | Mem: 8Gi]
+                Base[Base Model<br/>Inference Service<br/>GPU: 1 | Mem: 2Gi]
+                Finetuned[Fine-tuned Model<br/>Inference Service<br/>GPU: 1 | Mem: 2Gi]
+            end
+            
+            subgraph "Supporting Services"
+                UI[Web UI<br/>Nginx]
+                GPU[NVIDIA Device Plugin<br/>DaemonSet]
+            end
+            
+            subgraph "Storage"
+                PV[PersistentVolume<br/>EBS 50Gi<br/>Model Checkpoints]
+            end
+            
+            Train --> PV
+            Base --> GPU
+            Finetuned --> GPU
+            Train --> GPU
+        end
+    end
+    
+    HF[Hugging Face Hub] --> Train
+    Train --> HF
+    
+    User[User Browser] --> UI
+    UI --> Base
+    UI --> Finetuned
+    
+    style Train fill:#667eea,stroke:#333,color:#fff
+    style Base fill:#764ba2,stroke:#333,color:#fff
+    style Finetuned fill:#667eea,stroke:#333,color:#fff
+    style GPU fill:#76b900,stroke:#333,color:#fff
+    style PV fill:#ff9900,stroke:#333,color:#fff
 
 External Services:
   🤗 Hugging Face Hub ◄──► Training Job (push/pull models)
