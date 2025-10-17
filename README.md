@@ -45,27 +45,8 @@ Transform a base language model into a conversational AI through Kubernetes-orch
 
 ## Repository Structure
 
-├── infrastructure/                # Kubernetes cluster setup scripts
-├── training/                      # Fine-tuning QLoRA training script and Dockerfile
-├── k8s-manifests/                 # Kubernetes resource definitions
-│   ├── training-instruction-fintune/
-│   │   ├── models-pv.yaml         # PersistentVolume
-│   │   └── training-job.yaml      # Training Job
-│   ├── inference-base/
-│   │   ├── deployment.yaml        # Base model deployment
-│   │   └── service.yaml           # Base model service
-│   ├── inference-finetuned/
-│   │   ├── deployment.yaml        # Fine-tuned deployment
-│   │   └── service.yaml           # Fine-tuned service
-│   ├── ui-base/
-│   │   ├── configmap.yaml         # Base UI HTML
-│   │   └── deployment.yaml        # Base UI deployment
-│   └── ui-finetuned/
-│       ├── configmap.yaml         # Fine-tuned UI HTML
-│       └── deployment.yaml        # Fine-tuned UI deployment
-├── inference-base-model/          # Base model FastAPI application
-├── inference-finetuned-model/     # Fine-tuned model FastAPI application
-└── docs/                          # Detailed documentation
+<img width="802" height="555" alt="image" src="https://github.com/user-attachments/assets/3fe29bcd-7f0d-4a3f-9275-1a15464c2e96" />
+
 
 ## Quick Start
 
