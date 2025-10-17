@@ -14,98 +14,183 @@ while keeping inference services running concurrently.
 
 - **GPU-Accelerated Training**: Leverage NVIDIA Tesla T4 GPUs through Kubernetes for efficient model training
 - **Memory-Efficient Fine-Tuning**: Implement QLoRA (4-bit quantization + LoRA adapters) to reduce GPU memory requirements by 75%
-- **Production Kubernetes Setup**: Deploy on AWS using Kubespray with proper GPU support (NVIDIA device plugin, RuntimeClass)
+- **Production Infrastructure**: Deployed Kubernetes cluster on AWS using Kubespray with proper GPU support (NVIDIA device plugin, RuntimeClass)
 - **Concurrent Operations**: Run fine-tuning jobs alongside live inference services on the same GPU
 - **Containerized Workflows**: Fully Dockerized training and inference pipelines
+- **Checkpoint Recovery**: Resume training after interruptions using AWS EBS
 - **A/B Testing Ready**: Compare base model vs fine-tuned model performance side-by-side
-- **Reproducible Pipeline**: Version-controlled configurations, datasets, and hyperparameters
+- **GitOps Workflow**: Version-controlled infrastructure and configurations, datasets, and hyperparameters
 
 ## Architecture
 
 Transform a base language model into a conversational AI through Kubernetes-orchestrated training:
 
-Base TinyLlama → [K8s Training Job + Alpaca Dataset + QLoRA] → Fine-tuned Chat Model → Production API
 
-**Infrastructure Stack:**
-- **Compute**: AWS G4DN instance (Tesla T4 GPU, 32GB RAM)
-- **Orchestration**: Kubernetes (deployed via Kubespray)
-- **Training Framework**: PyTorch + HuggingFace Transformers + PEFT
-- **Fine-Tuning Method**: QLoRA (4-bit quantization)
-- **Dataset**: Stanford Alpaca (52K instruction-following examples)
-- **Deployment**: FastAPI backend + Nginx frontend
-- **Container Registry**: GitHub Container Registry (ghcr.io)
+┌─────────────────────────────────────────────────────────────────┐
+│                         AWS G4DN Instance                        │
+│                    (Tesla T4 GPU, 32GB RAM)                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────┐    │
+│  │              Kubernetes Cluster (Kubespray)             │    │
+│  │                                                          │    │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │    │
+│  │  │   Training   │  │  Base Model  │  │  Fine-tuned  │ │    │
+│  │  │     Job      │  │   Inference  │  │   Inference  │ │    │
+│  │  │  (QLoRA)     │  │   Service    │  │   Service    │ │    │
+│  │  │              │  │              │  │              │ │    │
+│  │  │  GPU: 1      │  │  GPU: 1      │  │  GPU: 1      │ │    │
+│  │  │  Mem: 8Gi    │  │  Mem: 2Gi    │  │  Mem: 2Gi    │ │    │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘ │    │
+│  │                                                          │    │
+│  │  ┌──────────────┐  ┌──────────────────────────────┐   │    │
+│  │  │  Web UI      │  │  NVIDIA Device Plugin        │   │    │
+│  │  │  (Nginx)     │  │  (DaemonSet)                 │   │    │
+│  │  └──────────────┘  └──────────────────────────────┘   │    │
+│  │                                                          │    │
+│  │  ┌─────────────────────────────────────────────────┐   │    │
+│  │  │         PersistentVolume (EBS 50Gi)             │   │    │
+│  │  │         - Model checkpoints                      │   │    │
+│  │  │         - Training artifacts                     │   │    │
+│  │  └─────────────────────────────────────────────────┘   │    │
+│  └────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
 
-## Why This Project?
+***Training Pipeline***: TinyLlama-1.1B → [QLoRA + Alpaca Dataset] → Fine-tuned Model → HuggingFace Hub
 
-This project bridges the gap between ML research and production engineering:
+### Technology Stack
 
-1. **For ML Engineers**: Learn to operationalize LLM fine-tuning at scale
-2. **For DevOps/Platform Engineers**: Understand ML workload requirements on Kubernetes
-3. **For Students**: Hands-on experience with modern MLOps practices
-4. **For Practitioners**: Production-ready template for custom LLM deployment
-
-Unlike toy examples, this demonstrates:
-- Real GPU resource management
-- Persistent storage for model artifacts
-- Job-based training workflows
-- Live service updates without downtime
-- Cost-effective cloud infrastructure
-
-## Learning
-
-- Setting up GPU-enabled Kubernetes clusters on AWS
-- Configuring NVIDIA Container Toolkit and device plugins
-- Implementing QLoRA for memory-efficient fine-tuning
-- Creating Kubernetes Jobs for ML training workloads
-- Managing model artifacts with PersistentVolumes
-- Deploying and versioning ML models in production
-- Building FastAPI inference services
-- Monitoring GPU utilization in multi-tenant environments
-
-**Training Specs:**
-- Training Time: ~3-4 hours on Tesla T4
-- GPU Memory Usage: ~6-8GB (training) + ~2GB (concurrent inference)
-- Dataset: 52,000 instruction-response pairs
-- Model Size: Base model 2.2GB + Adapters ~100MB
-
-**Performance Improvement:**
-- ✅ Better instruction following
-- ✅ More coherent conversational responses
-- ✅ Improved task completion
-- ✅ Reduced hallucination on structured tasks
+| Component | Technology |
+|-----------|------------|
+| **Compute** | AWS G4DN (Tesla T4 GPU) |
+| **Orchestration** | Kubernetes 1.28+ (Kubespray) |
+| **Container Runtime** | containerd with NVIDIA runtime |
+| **ML Framework** | PyTorch 2.0+, Transformers 4.35+ |
+| **Fine-Tuning** | PEFT (QLoRA), 4-bit quantization |
+| **Backend** | FastAPI, Uvicorn |
+| **Frontend** | HTML/CSS/JS, Nginx |
+| **Storage** | AWS EBS (gp3) |
+| **Registry** | GitHub Container Registry |
 
 ## Repository Structure
 
-├── infrastructure/      # Kubernetes cluster setup scripts
-├── training/           # Fine-tuning code and Dockerfile
-├── k8s-manifests/      # Kubernetes resource definitions
-├── inference/          # Production API service
-├── ui/                 # Chat interface
-├── scripts/            # Automation scripts
-└── docs/              # Detailed documentation
+├── infrastructure/                # Kubernetes cluster setup scripts
+├── training/                      # Fine-tuning QLoRA training script and Dockerfile
+├── k8s-manifests/                 # Kubernetes resource definitions
+│   ├── training-instruction-fintune/
+│   │   ├── models-pv.yaml         # PersistentVolume
+│   │   └── training-job.yaml      # Training Job
+│   ├── inference-base/
+│   │   ├── deployment.yaml        # Base model deployment
+│   │   └── service.yaml           # Base model service
+│   ├── inference-finetuned/
+│   │   ├── deployment.yaml        # Fine-tuned deployment
+│   │   └── service.yaml           # Fine-tuned service
+│   ├── ui-base/
+│   │   ├── configmap.yaml         # Base UI HTML
+│   │   └── deployment.yaml        # Base UI deployment
+│   └── ui-finetuned/
+│       ├── configmap.yaml         # Fine-tuned UI HTML
+│       └── deployment.yaml        # Fine-tuned UI deployment
+├── inference-base-model/          # Base model FastAPI application
+├── inference-finetuned-model/     # Fine-tuned model FastAPI application
+└── docs/                          # Detailed documentation
 
 ## Quick Start
+
+### Step 1: Clone Repository
 ```bash
-# 1. Go to infrastructure/setup_aws_node.sh and replace the following values:
-PUBLIC_IP="YOUR PUBLIC IP"       # e.g., "54.123.45.67"
-PRIVATE_IP="YOUR PRIVATE IP"    # e.g., "172.31.0.10"
-SSH_KEY_PATH="ssh key path"     # Path to your AWS SSH key
-SSH_USER="ubuntu"
+git clone https://github.com/yourusername/finetuning-llm-with-k8s.git
+cd finetuning-llm-with-k8s
+```
 
-#2. Set up Kubernetes cluster with GPU support
+### Step 2: Configure AWS Connection
+Edit `infrastructure/setup_aws_node.sh` with your instance details:
+
+```bash
+PUBLIC_IP="YOUR_AWS_PUBLIC_IP"       # e.g., "54.123.45.67"
+PRIVATE_IP="YOUR_AWS_PRIVATE_IP"     # e.g., "172.31.0.10"
+SSH_KEY_PATH="~/.ssh/your-key.pem"   # Path to your SSH key
+SSH_USER="ubuntu"                     # SSH username
+```
+
+### Step 3: Deploy Kubernetes Cluster
+```bash
+# Make scripts executable
+chmod +x infrastructure/*.sh
+
+# Run automated setup (takes ~30-45 minutes)
 ./infrastructure/setup_aws_node.sh
+```
 
-# 3. Deploy model-pv.yaml to create Persistant Volume
-kubectl apply -f models-pv.yaml
+This script will:
+1. Install Kubespray and dependencies
+2. Deploy Kubernetes to your AWS instance
+3. Configure GPU support (NVIDIA device plugin)
+4. Set up kubectl on your local machine
+5. Verify cluster health
+
+### Step 4: Create Persistent Storage
+```bash
+# Create directory on AWS instance
+ssh -i ~/.ssh/your-key.pem ubuntu@YOUR_PUBLIC_IP "sudo mkdir -p /mnt/fast-disks/models && sudo chmod 777 /mnt/fast-disks/models"
+
+# Deploy PersistentVolume
+kubectl apply -f k8s-manifests/training-instruction-fintune/models-pv.yaml
+
+# Verify
 kubectl get pv
+```
 
-# 4. Create kubernetes secrets
+### Step 5: Configure Hugging Face Credentials
+```bash
+# Get your token from https://huggingface.co/settings/tokens
 kubectl create secret generic huggingface-token \
   --from-literal=token='hf_YOUR_ACTUAL_TOKEN' \
-  --from-literal=repo='shettynavisha25/tinyllama-alpaca-finetuned'
+  --from-literal=repo='your-username/tinyllama-alpaca-finetuned'
+```
 
-# 5. Submit training job
-kubectl apply -f k8s-manifests/training-job.yaml
+### Step 6: Launch Training Job
+```bash
+# Deploy training job
+kubectl apply -f k8s-manifests/training-instruction-fintune/training-job.yaml
 
-# 6. Monitor training
+# Monitor progress
 kubectl logs -f job/tinyllama-finetune-alpaca
+```
+
+### Step 7: Deploy Inference Services
+
+#### Deploy Base Model
+```bash
+kubectl apply -f k8s-manifests/inference-base/
+```
+
+#### Deploy Fine-Tuned Model (after training completes)
+```bash
+kubectl apply -f k8s-manifests/inference-finetuned/
+```
+
+#### Deploy Web UIs
+```bash
+# Base model UI
+kubectl apply -f k8s-manifests/ui-base/
+
+# Fine-tuned model UI
+kubectl apply -f k8s-manifests/ui-finetuned/
+```
+
+### Step 8: Access Services
+
+```bash
+# Get NodePort for services
+kubectl get svc
+
+# Example output:
+# llm-api-finetuned-service   NodePort   10.96.1.1   <none>   80:30557/TCP
+# llm-ui-finetuned-service    NodePort   10.96.1.2   <none>   80:31234/TCP
+```
+
+Access in browser:
+- **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30557`
+- **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31234`

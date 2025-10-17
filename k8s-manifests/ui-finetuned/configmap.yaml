@@ -218,7 +218,7 @@ data:
         <script>
             // API URL - will be updated dynamically after deployment
             const API_BASE = window.location.hostname;
-            const API_PORT = 'API_PORT_PLACEHOLDER'; // Will be replaced after deployment
+            const API_PORT = '30557'; // Will be replaced after deployment
             const API_URL = `http://${API_BASE}:${API_PORT}`;
             
             const maxLengthSlider = document.getElementById('maxLength');
@@ -274,7 +274,7 @@ data:
                     loadingDiv.remove();
                     addMessage(data.generated_text, 'bot');
                     
-                    status.textContent = `⚡ Generated in ${data.generation_time.toFixed(2)}s on ${data.device}`;
+                    status.textContent = `Generated in ${data.generation_time.toFixed(2)}s on ${data.device}`;
                     status.className = 'status success';
                     
                 } catch (error) {
