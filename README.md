@@ -3,6 +3,14 @@
 An end-to-end production-grade pipeline for fine-tuning Large Language Models (LLMs) 
 using Kubernetes orchestration, demonstrating modern MLOps practices with GPU infrastructure.
 
+---
+<div align="center">
+  <img src="https://img.shields.io/badge/Fine--tuning-QLoRA-FF6B6B" alt="QLoRA" />
+  <img src="https://img.shields.io/badge/Model-TinyLlama%201.1B-purple" alt="TinyLlama" />
+  <img src="https://img.shields.io/badge/Dataset-Alpaca%2052K-orange" alt="Alpaca" />
+  <img src="https://img.shields.io/badge/HuggingFace-Model%20Hub-FFD21E?logo=huggingface&logoColor=black" alt="HuggingFace" />
+</div>
+
 ## Project Overview
 
 This project showcases how to fine-tune TinyLlama (1.1B parameters) into an instruction-following 
@@ -25,36 +33,7 @@ while keeping inference services running concurrently.
 
 Transform a base language model into a conversational AI through Kubernetes-orchestrated training:
 
-
-┌─────────────────────────────────────────────────────────────────┐
-│                         AWS G4DN Instance                        │
-│                    (Tesla T4 GPU, 32GB RAM)                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │              Kubernetes Cluster (Kubespray)             │    │
-│  │                                                          │    │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │    │
-│  │  │   Training   │  │  Base Model  │  │  Fine-tuned  │ │    │
-│  │  │     Job      │  │   Inference  │  │   Inference  │ │    │
-│  │  │  (QLoRA)     │  │   Service    │  │   Service    │ │    │
-│  │  │              │  │              │  │              │ │    │
-│  │  │  GPU: 1      │  │  GPU: 1      │  │  GPU: 1      │ │    │
-│  │  │  Mem: 8Gi    │  │  Mem: 2Gi    │  │  Mem: 2Gi    │ │    │
-│  │  └──────────────┘  └──────────────┘  └──────────────┘ │    │
-│  │                                                          │    │
-│  │  ┌──────────────┐  ┌──────────────────────────────┐   │    │
-│  │  │  Web UI      │  │  NVIDIA Device Plugin        │   │    │
-│  │  │  (Nginx)     │  │  (DaemonSet)                 │   │    │
-│  │  └──────────────┘  └──────────────────────────────┘   │    │
-│  │                                                          │    │
-│  │  ┌─────────────────────────────────────────────────┐   │    │
-│  │  │         PersistentVolume (EBS 50Gi)             │   │    │
-│  │  │         - Model checkpoints                      │   │    │
-│  │  │         - Training artifacts                     │   │    │
-│  │  └─────────────────────────────────────────────────┘   │    │
-│  └────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────┘
+<img width="411" height="638" alt="image" src="https://github.com/user-attachments/assets/8775671b-9913-436a-8910-3a25ad747826" />
 
 ***Training Pipeline***: TinyLlama-1.1B → [QLoRA + Alpaca Dataset] → Fine-tuned Model → HuggingFace Hub
 
@@ -74,27 +53,8 @@ Transform a base language model into a conversational AI through Kubernetes-orch
 
 ## Repository Structure
 
-├── infrastructure/                # Kubernetes cluster setup scripts
-├── training/                      # Fine-tuning QLoRA training script and Dockerfile
-├── k8s-manifests/                 # Kubernetes resource definitions
-│   ├── training-instruction-fintune/
-│   │   ├── models-pv.yaml         # PersistentVolume
-│   │   └── training-job.yaml      # Training Job
-│   ├── inference-base/
-│   │   ├── deployment.yaml        # Base model deployment
-│   │   └── service.yaml           # Base model service
-│   ├── inference-finetuned/
-│   │   ├── deployment.yaml        # Fine-tuned deployment
-│   │   └── service.yaml           # Fine-tuned service
-│   ├── ui-base/
-│   │   ├── configmap.yaml         # Base UI HTML
-│   │   └── deployment.yaml        # Base UI deployment
-│   └── ui-finetuned/
-│       ├── configmap.yaml         # Fine-tuned UI HTML
-│       └── deployment.yaml        # Fine-tuned UI deployment
-├── inference-base-model/          # Base model FastAPI application
-├── inference-finetuned-model/     # Fine-tuned model FastAPI application
-└── docs/                          # Detailed documentation
+<img width="802" height="555" alt="image" src="https://github.com/user-attachments/assets/3fe29bcd-7f0d-4a3f-9275-1a15464c2e96" />
+
 
 ## Quick Start
 
@@ -194,3 +154,21 @@ kubectl get svc
 Access in browser:
 - **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30557`
 - **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31234`
+
+Fine-tuned Model: `https://huggingface.co/shettynavisha25/tinyllama-alpaca-finetuned`
+
+## Acknowledgments
+
+- **TinyLlama Team** - For the base model
+- **Stanford Alpaca** - For the instruction dataset
+- **Hugging Face** - For Transformers and PEFT libraries
+- **NVIDIA** - For GPU computing and container toolkit
+- **Kubernetes Community** - For orchestration platform
+
+## Additional Resources
+
+- [TinyLlama Model Card](https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0)
+- [QLoRA Paper](https://arxiv.org/abs/2305.14314)
+- [Alpaca Dataset](https://github.com/tatsu-lab/stanford_alpaca)
+- [Kubernetes GPU Support](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/)
+- [PEFT Documentation](https://huggingface.co/docs/peft)
