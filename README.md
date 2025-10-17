@@ -1,18 +1,10 @@
 # Fine-Tuning LLM with Kubernetes
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Kubernetes-1.28+-326CE5?logo=kubernetes&logoColor=white" alt="Kubernetes" />
-  <img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch" />
-  <img src="https://img.shields.io/badge/NVIDIA-GPU%20Accelerated-76B900?logo=nvidia&logoColor=white" alt="NVIDIA" />
   <img src="https://img.shields.io/badge/Fine--tuning-QLoRA-FF6B6B" alt="QLoRA" />
-  <img src="https://img.shields.io/badge/AWS-G4DN%20Instance-FF9900?logo=amazon-aws&logoColor=white" alt="AWS" />
-  <img src="https://img.shields.io/badge/HuggingFace-Model%20Hub-FFD21E?logo=huggingface&logoColor=black" alt="HuggingFace" />
-</div>
-<div align="center">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
-  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome" />
   <img src="https://img.shields.io/badge/Model-TinyLlama%201.1B-purple" alt="TinyLlama" />
   <img src="https://img.shields.io/badge/Dataset-Alpaca%2052K-orange" alt="Alpaca" />
+  <img src="https://img.shields.io/badge/HuggingFace-Model%20Hub-FFD21E?logo=huggingface&logoColor=black" alt="HuggingFace" />
 </div>
 
 An end-to-end production-grade pipeline for fine-tuning Large Language Models (LLMs) 
