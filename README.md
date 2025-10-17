@@ -154,3 +154,21 @@ kubectl get svc
 Access in browser:
 - **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30557`
 - **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31234`
+
+Fine-tuned Model: `https://huggingface.co/shettynavisha25/tinyllama-alpaca-finetuned`
+
+## Acknowledgments
+
+- **TinyLlama Team** - For the base model
+- **Stanford Alpaca** - For the instruction dataset
+- **Hugging Face** - For Transformers and PEFT libraries
+- **NVIDIA** - For GPU computing and container toolkit
+- **Kubernetes Community** - For orchestration platform
+
+## Additional Resources
+
+- [TinyLlama Model Card](https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0)
+- [QLoRA Paper](https://arxiv.org/abs/2305.14314)
+- [Alpaca Dataset](https://github.com/tatsu-lab/stanford_alpaca)
+- [Kubernetes GPU Support](https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/)
+- [PEFT Documentation](https://huggingface.co/docs/peft)
