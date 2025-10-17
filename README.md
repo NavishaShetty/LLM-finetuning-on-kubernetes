@@ -27,11 +27,6 @@ Transform a base language model into a conversational AI through Kubernetes-orch
 
 <img width="411" height="638" alt="image" src="https://github.com/user-attachments/assets/8775671b-9913-436a-8910-3a25ad747826" />
 
-              
-External Services:
-  🤗 Hugging Face Hub ◄──► Training Job (push/pull models)
-  🌐 User Browser ────────► Web UI (Nginx) ──► APIs
-
 ***Training Pipeline***: TinyLlama-1.1B → [QLoRA + Alpaca Dataset] → Fine-tuned Model → HuggingFace Hub
 
 ### Technology Stack
