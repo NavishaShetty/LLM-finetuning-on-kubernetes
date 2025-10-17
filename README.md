@@ -24,9 +24,10 @@ while keeping inference services running concurrently.
 ## Architecture
 
 Transform a base language model into a conversational AI through Kubernetes-orchestrated training:
-<img width="388" height="583" alt="image" src="https://github.com/user-attachments/assets/edf31802-c7a7-46d7-a656-460091787f2f" />
 
+<img width="411" height="638" alt="image" src="https://github.com/user-attachments/assets/8775671b-9913-436a-8910-3a25ad747826" />
 
+              
 External Services:
   🤗 Hugging Face Hub ◄──► Training Job (push/pull models)
   🌐 User Browser ────────► Web UI (Nginx) ──► APIs
