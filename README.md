@@ -26,7 +26,7 @@ The fine-tuned model demonstrates significant improvements in instruction-follow
 <tr>
 <td width="50%">
 
-#### Base Model (CPU)
+#### Base Model
 <img src="screenshots/Tinyllama-model.png" alt="Base Model Chat Interface" width="100%"/>
 
 *The base model provides a conversational explanation but lacks structure and may include unnecessary details or go off-topic.*
@@ -34,7 +34,7 @@ The fine-tuned model demonstrates significant improvements in instruction-follow
 </td>
 <td width="50%">
 
-#### Fine-Tuned Model (GPU)
+#### Fine-Tuned Model
 <img src="screenshots/Finetuned-model.png" alt="Fine-Tuned Model Chat Interface" width="100%"/>
 
 *The fine-tuned model delivers a clear, concise explanation with better organization and stays focused on the topic.*
