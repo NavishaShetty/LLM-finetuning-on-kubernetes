@@ -17,7 +17,7 @@ spec:
         app: llm-api
         version: tinyllama
     spec:
-      runtimeClassName: nvidia
+      # runtimeClassName: nvidia
       containers:
       - name: llm-server
         image: ghcr.io/ghcr.io/navishashetty/llm-api:v1
@@ -27,13 +27,13 @@ spec:
           value: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
         resources:
           limits:
-            nvidia.com/gpu: "1"
+            # nvidia.com/gpu: "1"
+            memory: "8Gi"
+            cpu: "4"
+          requests:
+            # nvidia.com/gpu: "1"
             memory: "4Gi"
             cpu: "2"
-          requests:
-            nvidia.com/gpu: "1"
-            memory: "2Gi"
-            cpu: "1"
         ports:
         - containerPort: 8000
         readinessProbe:
