@@ -18,6 +18,31 @@ chat model using the Alpaca dataset, all orchestrated through Kubernetes on AWS 
 The pipeline demonstrates memory-efficient fine-tuning with QLoRA (Quantized Low-Rank Adaptation) 
 while keeping inference services running concurrently.
 
+## Model Comparison: Base vs Fine-Tuned
+
+The fine-tuned model demonstrates significant improvements in instruction-following, structured output, and task completion quality. Below are side-by-side comparisons showing the difference in performance.
+
+<table>
+<tr>
+<td width="50%">
+
+#### Base Model (CPU)
+<img src="screenshots/Tinyllama-model.png" alt="Base Model Chat Interface" width="100%"/>
+
+*The base model provides a conversational explanation but lacks structure and may include unnecessary details or go off-topic.*
+
+</td>
+<td width="50%">
+
+#### Fine-Tuned Model (GPU)
+<img src="screenshots/Finetuned-model.png" alt="Fine-Tuned Model Chat Interface" width="100%"/>
+
+*The fine-tuned model delivers a clear, concise explanation with better organization and stays focused on the topic.*
+
+</td>
+</tr>
+</table>
+
 ## Key Features
 
 - **GPU-Accelerated Training**: Leverage NVIDIA Tesla T4 GPUs through Kubernetes for efficient model training
@@ -90,7 +115,7 @@ This script will:
 4. Set up kubectl on your local machine
 5. Verify cluster health
 
-### Step 4: Create Persistent Storage
+### Step 4: Create Persistent Storage (skip if you're not training/fine-tuning model, go to step 7)
 ```bash
 # Create directory on AWS instance
 ssh -i ~/.ssh/your-key.pem ubuntu@YOUR_PUBLIC_IP "sudo mkdir -p /mnt/fast-disks/models && sudo chmod 777 /mnt/fast-disks/models"
@@ -131,15 +156,6 @@ kubectl apply -f k8s-manifests/inference-base/
 kubectl apply -f k8s-manifests/inference-finetuned/
 ```
 
-#### Deploy Web UIs
-```bash
-# Base model UI
-kubectl apply -f k8s-manifests/ui-base/
-
-# Fine-tuned model UI
-kubectl apply -f k8s-manifests/ui-finetuned/
-```
-
 ### Step 8: Access Services
 
 ```bash
@@ -148,12 +164,41 @@ kubectl get svc
 
 # Example output:
 # llm-api-finetuned-service   NodePort   10.96.1.1   <none>   80:30557/TCP
-# llm-ui-finetuned-service    NodePort   10.96.1.2   <none>   80:31234/TCP
+# llm-api-service    NodePort   10.96.1.2   <none>   80:31234/TCP
 ```
 
+Add the service ports to AWS security group
+
+Update The API_PORT variable in `k8s-manifests/ui-base/configmap.yaml` on line 214 with the NodePort from the llm-api-service
+Update The API_PORT variable in `k8s-manifests/ui-finetuned/configmap.yaml` on line 221 with the NodePort from the llm-api-finetuned-service
+
+### Step 9: Deploy Web UIs
+```bash
+# Base model UI
+kubectl apply -f k8s-manifests/ui-base/
+
+# Fine-tuned model UI
+kubectl apply -f k8s-manifests/ui-finetuned/
+```
+
+### Step 10: Access Services
+
+```bash
+# Get NodePort for services
+kubectl get svc
+
+# Example output:
+# llm-api-finetuned-service   NodePort   10.96.1.1   <none>   80:30557/TCP
+# llm-api-service    NodePort   10.96.1.2   <none>   80:31234/TCP
+# llm-ui-finetuned-service   NodePort   10.96.1.1   <none>   80:30211/TCP
+# llm-ui-service    NodePort   10.96.1.2   <none>   80:31211/TCP
+```
+
+Add the service ports to AWS security group
+
 Access in browser:
-- **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30557`
-- **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31234`
+- **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30211`
+- **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31211`
 
 Fine-tuned Model: `https://huggingface.co/shettynavisha25/tinyllama-alpaca-finetuned`
 
