@@ -200,6 +200,51 @@ Access in browser:
 - **Fine-tuned API**: `http://YOUR_PUBLIC_IP:30211`
 - **Fine-tuned UI**: `http://YOUR_PUBLIC_IP:31211`
 
+## Steps to run Model Evaluation
+```bash
+# ssh into the node
+ssh -i ~/.ssh/aws-key-pair.pem ubuntu@YOUR_PUBLIC_IP
+
+# install dependencies
+pip install evaluate rouge-score bert-score sacrebleu
+pip install peft accelerate bitsandbytes
+
+# Create directory
+mkdir -p ~/evaluations
+cd ~/evaluations
+
+#  Open a new terminal on local machine and copy files to AWS node
+cd evaluation
+
+scp -i ~/.ssh/aws-key-pair.pem \
+    dolly-evaluation.py \
+    orca-evaluation.py \
+    alpaca-retrospective-evaluation.py \
+    run-all-evaluations.py \
+    ubuntu@YOUR_PUBLIC_IP:~/evaluations/
+
+# On AWS node, verify files are there
+cd ~/evaluations
+ls -lh
+
+# Run evaluations
+cd ~/evaluations
+nohup python3 run-all-evaluations.py > evaluation.log 2>&1 &
+
+# Monitor progress
+tail -f evaluation.log
+
+# After evaluation is complete, come back to the terminal and Copy all evaluation results
+scp -i ~/.ssh/aws-key-pair.pem -r \
+    'ubuntu@YOUR_PUBLIC_IP:~/evaluations/*_evaluation' \
+    ~/finetuning-llm-with-k8s/evaluation-results/
+
+# Also copy the comprehensive summary
+scp -i ~/.ssh/aws-key-pair.pem -r \
+    ubuntu@YOUR_PUBLIC_IP:~/evaluations/comprehensive_evaluation \
+    ~/finetuning-llm-with-k8s/evaluation-results/
+```
+
 - **Fine-tuned Model**: `https://huggingface.co/shettynavisha25/tinyllama-alpaca-finetuned`
 
 ## Acknowledgments

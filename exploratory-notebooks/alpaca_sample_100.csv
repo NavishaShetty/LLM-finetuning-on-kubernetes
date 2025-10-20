@@ -1,0 +1,1162 @@
+instruction,input,output,text,instruction_length,input_length,output_length,instruction_words,input_words,output_words
+Describe the character of the protagonist in the given TV show.,Game of Thrones,"The protagonist of Game of Thrones is the longsuffering and honorable Eddard ""Ned"" Stark. Ned is the head of an ancient and powerful house in the north of the Seven Kingdoms, but he is nothing like the scheming lords of the south. He is a man of incredible honor and integrity, a loyal friend and the driving force behind his family. Despite facing tremendous odds, Ned remains steadfast and determined in his duty to do what is right, even if it means great personal cost. In many ways, Ned serves as a moral compass for the show, and his sense of duty and justice serves as a contrast to the political machinations of the south.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe the character of the protagonist in the given TV show.
+
+### Input:
+Game of Thrones
+
+### Response:
+The protagonist of Game of Thrones is the longsuffering and honorable Eddard ""Ned"" Stark. Ned is the head of an ancient and powerful house in the north of the Seven Kingdoms, but he is nothing like the scheming lords of the south. He is a man of incredible honor and integrity, a loyal friend and the driving force behind his family. Despite facing tremendous odds, Ned remains steadfast and determined in his duty to do what is right, even if it means great personal cost. In many ways, Ned serves as a moral compass for the show, and his sense of duty and justice serves as a contrast to the political machinations of the south.",63,15,630,11,3,115
+Construct a poem that describes the beauty of a sunset.,,"The setting sun paints a scene of beauty, 
+A golden light casts across an azure sky. 
+The orange hues of dusk mark the day's end, 
+As the night brings a blanket of tranquility. 
+The sun slowly fades to the horizon, 
+The stars slowly take its place. 
+The night slowly creeps in, 
+In awe at its beauty I feel grace.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Construct a poem that describes the beauty of a sunset.
+
+### Response:
+The setting sun paints a scene of beauty, 
+A golden light casts across an azure sky. 
+The orange hues of dusk mark the day's end, 
+As the night brings a blanket of tranquility. 
+The sun slowly fades to the horizon, 
+The stars slowly take its place. 
+The night slowly creeps in, 
+In awe at its beauty I feel grace.",55,0,313,10,0,59
+Describe the effects of exponential growth.,,"Exponential growth is a phenomenon in which an amount increases at an increasing rate over time. It is usually represented by a graph where the amount doubles over time. The effect of exponential growth can be seen in various aspects of the world. For instance, populations of certain species can exponentially increase with favorable conditions, while the spread of diseases can exponentially increase when left unchecked. Technology can also undergo exponential growth if there is strong demand and a rapid rate of innovation. Ultimately, exponential growth can help bring about tangible change when managed in a controlled manner, or create serious problems when left unchecked.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe the effects of exponential growth.
+
+### Response:
+Exponential growth is a phenomenon in which an amount increases at an increasing rate over time. It is usually represented by a graph where the amount doubles over time. The effect of exponential growth can be seen in various aspects of the world. For instance, populations of certain species can exponentially increase with favorable conditions, while the spread of diseases can exponentially increase when left unchecked. Technology can also undergo exponential growth if there is strong demand and a rapid rate of innovation. Ultimately, exponential growth can help bring about tangible change when managed in a controlled manner, or create serious problems when left unchecked.",43,0,681,6,0,105
+Imagine a future world where robots and humans coexist. Describe it.,,"In the future, robots and humans will exist together in harmony. Robots will help people with everyday tasks, while people will use their intelligence to continue innovating and pushing the boundaries of technology. It will be a world filled with opportunities and possibilities.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Imagine a future world where robots and humans coexist. Describe it.
+
+### Response:
+In the future, robots and humans will exist together in harmony. Robots will help people with everyday tasks, while people will use their intelligence to continue innovating and pushing the boundaries of technology. It will be a world filled with opportunities and possibilities.",68,0,279,11,0,43
+Create a list of three benefits of cloud computing.,,"1. Cost savings, as most cloud computing services are billed on a pay-as-you-go model based on usage rather than a fixed fee.
+2. Scalability, as the cloud can be easily scaled up or down based on changing needs.
+3. Increased security, as data is stored in a secure environment, protected by several layers of security protocols.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a list of three benefits of cloud computing.
+
+### Response:
+1. Cost savings, as most cloud computing services are billed on a pay-as-you-go model based on usage rather than a fixed fee.
+2. Scalability, as the cloud can be easily scaled up or down based on changing needs.
+3. Increased security, as data is stored in a secure environment, protected by several layers of security protocols.",51,0,328,9,0,56
+Explain why deep learning is a form of artificial intelligence.,,"Deep learning is a form of artificial intelligence because it is inspired by the functionality of the human brain. Deep learning architectures, such as neural networks and convolutional networks, are used to identify patterns and relationships in data. By using multiple layers, deep learning is able to detect complex non-linear patterns and make decisions based on those patterns. Deep learning algorithms have the capability to learn and adapt over time, similar to human intelligence.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Explain why deep learning is a form of artificial intelligence.
+
+### Response:
+Deep learning is a form of artificial intelligence because it is inspired by the functionality of the human brain. Deep learning architectures, such as neural networks and convolutional networks, are used to identify patterns and relationships in data. By using multiple layers, deep learning is able to detect complex non-linear patterns and make decisions based on those patterns. Deep learning algorithms have the capability to learn and adapt over time, similar to human intelligence.",63,0,488,10,0,74
+Outline the unique elements of a rock garden.,,"A rock garden is an exceptional way to add beauty, character and charm to a landscaping project. It is composed of rocks of various shapes, sizes and textures. The rocks are laid out in a complementary pattern that is inspired by natural arrangements found in nature. The rocks can be strategically placed to create hills, valleys and pathways that provide a unique design element. Plants can be incorporated in between the rocks that can be tailored to the garden based on desired mood or aesthetic. In addition, water features like streams and small ponds can be added to enhance the natural atmosphere. Rock gardens are a great way to bring the beauty of nature to your yard.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Outline the unique elements of a rock garden.
+
+### Response:
+A rock garden is an exceptional way to add beauty, character and charm to a landscaping project. It is composed of rocks of various shapes, sizes and textures. The rocks are laid out in a complementary pattern that is inspired by natural arrangements found in nature. The rocks can be strategically placed to create hills, valleys and pathways that provide a unique design element. Plants can be incorporated in between the rocks that can be tailored to the garden based on desired mood or aesthetic. In addition, water features like streams and small ponds can be added to enhance the natural atmosphere. Rock gardens are a great way to bring the beauty of nature to your yard.",45,0,678,8,0,117
+Formulate a multiple choice question related to the following topic.,The payment systems developed in the 19th century,"Which of the following payment systems was developed in the 19th century?
+A. Automated Clearing House 
+B. Magnetic Stripe Card
+C. Digital Wallet
+D. Interbank Transfer System 
+
+Answer: D. Interbank Transfer System","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Formulate a multiple choice question related to the following topic.
+
+### Input:
+The payment systems developed in the 19th century
+
+### Response:
+Which of the following payment systems was developed in the 19th century?
+A. Automated Clearing House 
+B. Magnetic Stripe Card
+C. Digital Wallet
+D. Interbank Transfer System 
+
+Answer: D. Interbank Transfer System",68,49,212,10,8,32
+Design a system to help manage customer support tickets.,,"The system could feature automated ticket routing, which allows customer service agents to process tickets more efficiently. Tickets could be routed based on the customer's inquiry type, like technical support or billing inquiries, or based on the agent's skillset. This system would also feature customer support tracking and analytics, so customer service teams could identify trends in customer inquiries and better assess customer satisfaction and customer service performance.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Design a system to help manage customer support tickets.
+
+### Response:
+The system could feature automated ticket routing, which allows customer service agents to process tickets more efficiently. Tickets could be routed based on the customer's inquiry type, like technical support or billing inquiries, or based on the agent's skillset. This system would also feature customer support tracking and analytics, so customer service teams could identify trends in customer inquiries and better assess customer satisfaction and customer service performance.",56,0,481,9,0,68
+Create a chart that compares the benefits and drawbacks of using a variety of web-based learning systems,,"|Benefits|Drawbacks|
+|-------|---------|
+|Easy Accessibility|Security Issues|
+|Lower Costs|Limitations of Technology Platform|
+|Interactive Learning|Increased Dependence on Technology|
+|Enhanced Record Keeping|Large Learning Curve for Students|
+|Increased Engagement|Equipment Needs|
+|Increased Collaboration|Internet Access Requirements|
+|Faster Delivery of Instruction|Difficulty Measuring Learning Outcomes|","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a chart that compares the benefits and drawbacks of using a variety of web-based learning systems
+
+### Response:
+|Benefits|Drawbacks|
+|-------|---------|
+|Easy Accessibility|Security Issues|
+|Lower Costs|Limitations of Technology Platform|
+|Interactive Learning|Increased Dependence on Technology|
+|Enhanced Record Keeping|Large Learning Curve for Students|
+|Increased Engagement|Equipment Needs|
+|Increased Collaboration|Internet Access Requirements|
+|Faster Delivery of Instruction|Difficulty Measuring Learning Outcomes|",104,0,410,17,0,36
+"Summarize this article in three sentences.
+
+Input: https://www.vox.com/2015/7/16/8962643/Gender-neutral-pronouns",https://www.vox.com/2015/7/16/8962643/Gender-neutral-pronouns,"Gender-neutral pronouns are terms that don’t specify male or female, like ""they"", ""ze"" or ""ey"". This idea has been around for decades as an effort to create an inclusive language that doesn’t exclude anyone, however recently it has grown in popularity. Gender-neutral pronouns are becoming more widely accepted and used in the community, and they are a tool to promote understanding and respect while addressing someone.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Summarize this article in three sentences.
+
+Input: https://www.vox.com/2015/7/16/8962643/Gender-neutral-pronouns
+
+### Input:
+https://www.vox.com/2015/7/16/8962643/Gender-neutral-pronouns
+
+### Response:
+Gender-neutral pronouns are terms that don’t specify male or female, like ""they"", ""ze"" or ""ey"". This idea has been around for decades as an effort to create an inclusive language that doesn’t exclude anyone, however recently it has grown in popularity. Gender-neutral pronouns are becoming more widely accepted and used in the community, and they are a tool to promote understanding and respect while addressing someone.",112,61,420,8,1,66
+The news and other sources have been claiming that Democracy is losing ground around the world. Give an example of a recent event to back this claim up.,,"A recent example of Democracy losing ground is the weakening of civil rights and liberties in Hong Kong, where pro-democracy protests have been violently suppressed by the Chinese government.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+The news and other sources have been claiming that Democracy is losing ground around the world. Give an example of a recent event to back this claim up.
+
+### Response:
+A recent example of Democracy losing ground is the weakening of civil rights and liberties in Hong Kong, where pro-democracy protests have been violently suppressed by the Chinese government.",152,0,191,28,0,29
+Describe what are the features that makes blockchain technology secure.,,"Blockchain technology is secure because it is immutable, meaning the data stored in it can't be changed once it is recorded; transparent, meaning all parties involved are able to view the transaction data; distributed, meaning the data is not concentrated in one place; and protected, meaning it is encrypted with strong cryptography.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe what are the features that makes blockchain technology secure.
+
+### Response:
+Blockchain technology is secure because it is immutable, meaning the data stored in it can't be changed once it is recorded; transparent, meaning all parties involved are able to view the transaction data; distributed, meaning the data is not concentrated in one place; and protected, meaning it is encrypted with strong cryptography.",71,0,334,10,0,52
+Suggest an efficient way to proofread an article.,,"An efficient way to proofread an article is to read it aloud, which makes it easier to pick up on typos and grammatical errors. Read through the article twice, once for content and a second time for proofreading. If possible, have someone else read through the article to get a second opinion as fresh eyes can also identify mistakes that you may have missed. Additionally, use grammar checkers or online proofreading tools to quickly detect any errors.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Suggest an efficient way to proofread an article.
+
+### Response:
+An efficient way to proofread an article is to read it aloud, which makes it easier to pick up on typos and grammatical errors. Read through the article twice, once for content and a second time for proofreading. If possible, have someone else read through the article to get a second opinion as fresh eyes can also identify mistakes that you may have missed. Additionally, use grammar checkers or online proofreading tools to quickly detect any errors.",49,0,453,8,0,77
+What is the technology stack for developing a web application?,,"The technology stack for developing a web application typically consists of a client-side framework, server-side programming language, a web server, a database system, and an operating system. Client-side frameworks, such as React or Angular, provide the user interface and allow for the dynamic manipulation of data. Server-side programming languages, such as Java or Python, are used to provide the logic and interact with the database. Web servers, such as Apache or Ngnix, host the application and the media content used by it. Database systems, such as MySQL or MongoDB, are used to store the data associated with the application. Finally, an operating system, such as Linux or Windows, provides the setting for the entire application stack to run.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+What is the technology stack for developing a web application?
+
+### Response:
+The technology stack for developing a web application typically consists of a client-side framework, server-side programming language, a web server, a database system, and an operating system. Client-side frameworks, such as React or Angular, provide the user interface and allow for the dynamic manipulation of data. Server-side programming languages, such as Java or Python, are used to provide the logic and interact with the database. Web servers, such as Apache or Ngnix, host the application and the media content used by it. Database systems, such as MySQL or MongoDB, are used to store the data associated with the application. Finally, an operating system, such as Linux or Windows, provides the setting for the entire application stack to run.",62,0,753,10,0,118
+Discuss the relationship between entropy and reversibility.,,Entropy is a measure of disorder in a system. It is a measure of the amount of energy that is unavailable to do work. Reversibility is the ability of a system to return to its original state after it has undergone some change. A reversible system is one in which the entropy of the system can be completely restored to its original state after undergoing a change. Entropy and reversibility are related in that a system with a lower entropy is more likely to be reversible.,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Discuss the relationship between entropy and reversibility.
+
+### Response:
+Entropy is a measure of disorder in a system. It is a measure of the amount of energy that is unavailable to do work. Reversibility is the ability of a system to return to its original state after it has undergone some change. A reversible system is one in which the entropy of the system can be completely restored to its original state after undergoing a change. Entropy and reversibility are related in that a system with a lower entropy is more likely to be reversible.",59,0,473,7,0,86
+Choose the correct answer.,"Who wrote the novel ""Jane Eyre""?",Charlotte Bronte,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Choose the correct answer.
+
+### Input:
+Who wrote the novel ""Jane Eyre""?
+
+### Response:
+Charlotte Bronte",26,32,16,4,6,2
+Compare the following two countries: USA and India,,"The United States and India are two very distinct nations with a variety of differences. The US is large, powerful and affluent, with a population of over 330 million people. India is a much larger country, with a population of approximately 1.35 billion. India has a much younger population than the US and is less affluent as well. India also has a much more diverse culture, including multiple languages and religions.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Compare the following two countries: USA and India
+
+### Response:
+The United States and India are two very distinct nations with a variety of differences. The US is large, powerful and affluent, with a population of over 330 million people. India is a much larger country, with a population of approximately 1.35 billion. India has a much younger population than the US and is less affluent as well. India also has a much more diverse culture, including multiple languages and religions.",50,0,421,8,0,71
+Name three endangered animal species.,,"Three endangered animal species are the Chinese Giant Salamander, the mountain gorilla, and the black rhinoceros.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Name three endangered animal species.
+
+### Response:
+Three endangered animal species are the Chinese Giant Salamander, the mountain gorilla, and the black rhinoceros.",37,0,113,5,0,16
+"Classify the word as ""animal"" or ""non-animal"".",Elephant,Animal,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Classify the word as ""animal"" or ""non-animal"".
+
+### Input:
+Elephant
+
+### Response:
+Animal",46,8,6,7,1,1
+Come up with a creative way to use the given word in a sentence,elephant,She felt like a small elephant in a room full of giant people.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Come up with a creative way to use the given word in a sentence
+
+### Input:
+elephant
+
+### Response:
+She felt like a small elephant in a room full of giant people.",63,8,62,14,1,13
+Write a script that prints a 4x4 spiral of numbers from 1 to 16.,,"""""""
+Script that prints a 4x4 spiral of numbers from 1 to 16
+""""""
+
+def printSpiral(n): 
+  
+    k = 0
+
+    for i in range(n): 
+  
+        for j in range(n) : 
+            print(k, end="" "") 
+            k = k + 1
+  
+        print() 
+
+if __name__ == '__main__':
+    n = 4
+    printSpiral(n) 
+
+# Output 
+# Output:
+# 0 1 2 3 
+# 11 10 9 8 
+# 12 13 14 7 
+# 15 16 5 4 
+# 17 6 3 2","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Write a script that prints a 4x4 spiral of numbers from 1 to 16.
+
+### Response:
+""""""
+Script that prints a 4x4 spiral of numbers from 1 to 16
+""""""
+
+def printSpiral(n): 
+  
+    k = 0
+
+    for i in range(n): 
+  
+        for j in range(n) : 
+            print(k, end="" "") 
+            k = k + 1
+  
+        print() 
+
+if __name__ == '__main__':
+    n = 4
+    printSpiral(n) 
+
+# Output 
+# Output:
+# 0 1 2 3 
+# 11 10 9 8 
+# 12 13 14 7 
+# 15 16 5 4 
+# 17 6 3 2",64,0,369,14,0,74
+"Given an example of a vehicle, come up with a catchy name for the vehicle.",Electric SUV.,Lightning Rover.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Given an example of a vehicle, come up with a catchy name for the vehicle.
+
+### Input:
+Electric SUV.
+
+### Response:
+Lightning Rover.",74,13,16,15,2,2
+Compose a Haiku poem based on the following prompt: swimming.,,"The sun on my skin,
+Water embracing my body,
+The joy of swimming.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Compose a Haiku poem based on the following prompt: swimming.
+
+### Response:
+The sun on my skin,
+Water embracing my body,
+The joy of swimming.",61,0,65,10,0,13
+Reword the given sentence to make it concise yet clear.,"For the purpose of being able to manage the number of employees more effectively, the company decided to make some changes.",The company implemented changes to manage employee numbers more effectively.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Reword the given sentence to make it concise yet clear.
+
+### Input:
+For the purpose of being able to manage the number of employees more effectively, the company decided to make some changes.
+
+### Response:
+The company implemented changes to manage employee numbers more effectively.",55,123,76,10,21,10
+Propose a solution to 'X'.,X: Inadequate access to healthcare in rural areas,One potential solution is to increase funding from the government and private organisations to support the development of telemedicine services and telehealth networks that allow health workers to deliver quality healthcare to rural areas from a distance. This would ensure that healthcare services can be provided in a much more cost-effective and efficient manner.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Propose a solution to 'X'.
+
+### Input:
+X: Inadequate access to healthcare in rural areas
+
+### Response:
+One potential solution is to increase funding from the government and private organisations to support the development of telemedicine services and telehealth networks that allow health workers to deliver quality healthcare to rural areas from a distance. This would ensure that healthcare services can be provided in a much more cost-effective and efficient manner.",26,49,366,5,8,54
+List some popular websites for online shopping.,,"Some popular websites for online shopping include: 
+• Amazon 
+• eBay 
+• Walmart 
+• Best Buy 
+• Target 
+• Macy’s 
+• AliExpress 
+• Etsy 
+• Groupon 
+• Kohl’s 
+• Nordstrom 
+• overstock.com 
+• Wayfair 
+• Zappos 
+• ASOS 
+• Sephora.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+List some popular websites for online shopping.
+
+### Response:
+Some popular websites for online shopping include: 
+• Amazon 
+• eBay 
+• Walmart 
+• Best Buy 
+• Target 
+• Macy’s 
+• AliExpress 
+• Etsy 
+• Groupon 
+• Kohl’s 
+• Nordstrom 
+• overstock.com 
+• Wayfair 
+• Zappos 
+• ASOS 
+• Sephora.",47,0,225,7,0,40
+"Take a phrase, and come up with an advertisement slogan based on it.",Stay connected,Stay connected with the world around you!,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Take a phrase, and come up with an advertisement slogan based on it.
+
+### Input:
+Stay connected
+
+### Response:
+Stay connected with the world around you!",68,14,41,13,2,7
+Write a description for a product that encourages shoppers to make purchases.,,"This product is a must-have for anyone looking to make their shopping a breeze. With advanced technology and easy-to-use features, it makes shopping quick and efficient. It's reliable and secure to use, so you can be confident in your purchases. Plus, you can save time and money with coupons and discounts too! So don't wait - make your shopping experience easier with this amazing product today!","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Write a description for a product that encourages shoppers to make purchases.
+
+### Response:
+This product is a must-have for anyone looking to make their shopping a breeze. With advanced technology and easy-to-use features, it makes shopping quick and efficient. It's reliable and secure to use, so you can be confident in your purchases. Plus, you can save time and money with coupons and discounts too! So don't wait - make your shopping experience easier with this amazing product today!",77,0,397,12,0,66
+Classify this sentence as either an imperative or a question.,This salad tastes wonderful.,Imperative.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Classify this sentence as either an imperative or a question.
+
+### Input:
+This salad tastes wonderful.
+
+### Response:
+Imperative.",61,28,11,10,4,1
+How can you ensure success in a job interview?,,"The key to success in a job interview is preparation. Researching the company and familiarizing yourself with the job description are important steps in preparing for the interview. Knowing the right answers and questions to ask is also essential. Additionally, dressing professionally and being punctual will demonstrate respect and enthusiasm for the job.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+How can you ensure success in a job interview?
+
+### Response:
+The key to success in a job interview is preparation. Researching the company and familiarizing yourself with the job description are important steps in preparing for the interview. Knowing the right answers and questions to ask is also essential. Additionally, dressing professionally and being punctual will demonstrate respect and enthusiasm for the job.",46,0,357,9,0,53
+"Translate ""Où sont les toilettes ? "" to English",,Where are the toilets?,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Translate ""Où sont les toilettes ? "" to English
+
+### Response:
+Where are the toilets?",47,0,22,9,0,4
+"Calculate the average of the numbers 3, 6, 12 and 21.",,11.5,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Calculate the average of the numbers 3, 6, 12 and 21.
+
+### Response:
+11.5",53,0,4,11,0,1
+Name three characteristics of the Ancient Egyptian civilization.,,"The Ancient Egyptian civilization was advanced for its time, having complex systems of writing, advanced architecture and engineering, and a powerful centralized government. Additionally, the Ancient Egyptians developed a complex system of religious beliefs and an advanced knowledge of astronomy and astrology. Lastly, they also created mummification techniques and advanced irrigation systems.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Name three characteristics of the Ancient Egyptian civilization.
+
+### Response:
+The Ancient Egyptian civilization was advanced for its time, having complex systems of writing, advanced architecture and engineering, and a powerful centralized government. Additionally, the Ancient Egyptians developed a complex system of religious beliefs and an advanced knowledge of astronomy and astrology. Lastly, they also created mummification techniques and advanced irrigation systems.",64,0,395,8,0,52
+Reword the following sentence so that it no longer contains any gender-biased language.,The salesman presented his new product with enthusiasm.,The salesperson presented their new product with enthusiasm.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Reword the following sentence so that it no longer contains any gender-biased language.
+
+### Input:
+The salesman presented his new product with enthusiasm.
+
+### Response:
+The salesperson presented their new product with enthusiasm.",87,55,60,13,8,8
+Compile a list of five books about World War 2.,,"1. All the Light We Cannot See by Anthony Doerr
+2. The Guns at Last Light by Rick Atkinson
+3. Unbroken by Laura Hillenbrand
+4. The Boy in the Striped Pajamas by John Boyne 
+5. The Book Thief by Markus Zusak","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Compile a list of five books about World War 2.
+
+### Response:
+1. All the Light We Cannot See by Anthony Doerr
+2. The Guns at Last Light by Rick Atkinson
+3. Unbroken by Laura Hillenbrand
+4. The Boy in the Striped Pajamas by John Boyne 
+5. The Book Thief by Markus Zusak",47,0,206,10,0,41
+Generate a sentence that hints at a mischievous activity.,,Jimmy was up to no good again.,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Generate a sentence that hints at a mischievous activity.
+
+### Response:
+Jimmy was up to no good again.",57,0,30,9,0,7
+"Given an input description, generate a visual representation",A cozy cottage near the beach,![alt text](https://i.pinimg.com/originals/a7/fe/90/a7fe9088a96adc95e57e9fe5161f7e59.jpg),"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Given an input description, generate a visual representation
+
+### Input:
+A cozy cottage near the beach
+
+### Response:
+![alt text](https://i.pinimg.com/originals/a7/fe/90/a7fe9088a96adc95e57e9fe5161f7e59.jpg)",60,29,89,8,6,2
+Create a list of 5 benefits that one can get from using artificial intelligence.,,"1. Improved customer service 
+2. Reduced costs and time spent on manual tasks 
+3. Greater accuracy in decision making 
+4. Streamlined processes for faster completion 
+5. Access to data insights for impactful decision making.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a list of 5 benefits that one can get from using artificial intelligence.
+
+### Response:
+1. Improved customer service 
+2. Reduced costs and time spent on manual tasks 
+3. Greater accuracy in decision making 
+4. Streamlined processes for faster completion 
+5. Access to data insights for impactful decision making.",80,0,224,14,0,34
+Give three pieces of advice on how to make the most of one's college experience.,,"1. Get involved with a student organization in order to meet new people and gain valuable skills. 
+2. Take a course outside your major to expand your knowledge and explore different areas of interest.
+3. Make use of all of the resources your school provides such as tutoring, career counseling, and mental health services.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Give three pieces of advice on how to make the most of one's college experience.
+
+### Response:
+1. Get involved with a student organization in order to meet new people and gain valuable skills. 
+2. Take a course outside your major to expand your knowledge and explore different areas of interest.
+3. Make use of all of the resources your school provides such as tutoring, career counseling, and mental health services.",80,0,322,15,0,54
+Rewrite the sentences below to make them grammatically correct.,She dont have time for me,She doesn't have time for me.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Rewrite the sentences below to make them grammatically correct.
+
+### Input:
+She dont have time for me
+
+### Response:
+She doesn't have time for me.",63,25,29,9,6,6
+Re-organize the given text so that it describes a narrative.,"They drove to the beach, and the sun was shining. They swam in the water, built sandcastles, and ate lunch.","The sun was shining when they drove to the beach. After they arrived, they jumped in the water to cool off. Next, they built sandcastles and enjoyed their lunch, soaking up the warmth of the sun.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Re-organize the given text so that it describes a narrative.
+
+### Input:
+They drove to the beach, and the sun was shining. They swam in the water, built sandcastles, and ate lunch.
+
+### Response:
+The sun was shining when they drove to the beach. After they arrived, they jumped in the water to cool off. Next, they built sandcastles and enjoyed their lunch, soaking up the warmth of the sun.",60,107,195,10,20,36
+Describe the significance of a historical event.,Historical Event: The Cuban Missile Crisis,"The Cuban Missile Crisis was a major confrontation between the Soviet Union and the United States in October 1962, during the Cold War. The crisis was a result of the Soviets placing nuclear missiles in Cuba, which was just 90 miles from the United States. The confrontation amounted to the closest the two superpowers came to a nuclear war. As a result of the crisis, the United States and the Soviet Union agreed to the Moscow–Washington hotline to ensure direct communication between the two capitals in the event of a similar crisis.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe the significance of a historical event.
+
+### Input:
+Historical Event: The Cuban Missile Crisis
+
+### Response:
+The Cuban Missile Crisis was a major confrontation between the Soviet Union and the United States in October 1962, during the Cold War. The crisis was a result of the Soviets placing nuclear missiles in Cuba, which was just 90 miles from the United States. The confrontation amounted to the closest the two superpowers came to a nuclear war. As a result of the crisis, the United States and the Soviet Union agreed to the Moscow–Washington hotline to ensure direct communication between the two capitals in the event of a similar crisis.",48,42,537,7,6,92
+Find the square root of 156.,<no input>,The square root of 156 is 12.48664.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Find the square root of 156.
+
+### Input:
+<no input>
+
+### Response:
+The square root of 156 is 12.48664.",28,10,35,6,2,7
+Name two major rivers that flow through US states.,,"Two major rivers in the United States are the Mississippi River, which flows through 10 US states, and the Missouri River, which flows through 7 US states.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Name two major rivers that flow through US states.
+
+### Response:
+Two major rivers in the United States are the Mississippi River, which flows through 10 US states, and the Missouri River, which flows through 7 US states.",50,0,155,9,0,27
+Design Pseudocode for a program that takes in 2 numbers from the user and prints their sum.,,"Step 1: Start 
+Step 2: Read two numbers from the user
+Step 3: Calculate the sum of the two numbers
+Step 4: Print the sum
+Step 5: End","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Design Pseudocode for a program that takes in 2 numbers from the user and prints their sum.
+
+### Response:
+Step 1: Start 
+Step 2: Read two numbers from the user
+Step 3: Calculate the sum of the two numbers
+Step 4: Print the sum
+Step 5: End",91,0,132,17,0,28
+Give a creative response for the following riddle.,What can run all day long but never get tired?,A river.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Give a creative response for the following riddle.
+
+### Input:
+What can run all day long but never get tired?
+
+### Response:
+A river.",50,46,8,8,10,2
+Add an introduction to the following poem.,"""I am the wind that
+flows through the trees
+I am gentle, but powerful
+A force of nature, to be seen""","The wind dances through nature, creating music that can be heard with the ears of the heart. It is a gentle, yet powerful force of nature that can be just as beautiful as it is mysterious. I am the wind that flows through the trees. I am gentle, but powerful, a force of nature to be seen.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Add an introduction to the following poem.
+
+### Input:
+""I am the wind that
+flows through the trees
+I am gentle, but powerful
+A force of nature, to be seen""
+
+### Response:
+The wind dances through nature, creating music that can be heard with the ears of the heart. It is a gentle, yet powerful force of nature that can be just as beautiful as it is mysterious. I am the wind that flows through the trees. I am gentle, but powerful, a force of nature to be seen.",42,100,289,7,21,57
+Suggest an AI based system that can be used in marketing.,,"AI can be used in marketing to generate targeted and personalized ads, providing relevant information to the right audiences. AI can also be used to improve customer segmentation and identify customer behavior patterns to develop better marketing strategies. AI-based systems can leverage natural language processing for sentiment analysis and conversational AI for customer service. Additionally, AI-powered predictive analytics can be used to forecast customer demand, enabling marketers to anticipate customer needs and generate more successful marketing campaigns.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Suggest an AI based system that can be used in marketing.
+
+### Response:
+AI can be used in marketing to generate targeted and personalized ads, providing relevant information to the right audiences. AI can also be used to improve customer segmentation and identify customer behavior patterns to develop better marketing strategies. AI-based systems can leverage natural language processing for sentiment analysis and conversational AI for customer service. Additionally, AI-powered predictive analytics can be used to forecast customer demand, enabling marketers to anticipate customer needs and generate more successful marketing campaigns.",57,0,568,11,0,77
+List two potential problems with using a GPT language model.,,Two potential problems with using a GPT language model are limited information processing capabilities and a vulnerability to generating incoherent or biased responses.,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+List two potential problems with using a GPT language model.
+
+### Response:
+Two potential problems with using a GPT language model are limited information processing capabilities and a vulnerability to generating incoherent or biased responses.",60,0,168,10,0,23
+Take the following description and create a story.,Nina had a single red balloon and a bowl of ice cream.,"Nina was eager to go on her first adventure. She had a single, bright red balloon and a bowl of cold and creamy ice cream. She took a deep breath and carefully opened the gate of her garden. She carefully untied her red balloon and soared up, high and higher still, into the blue sky above. She could see the houses and gardens getting smaller and smaller. Eventually she reached a beautiful meadow with multicolored flowers and buzzing insects. Nina floated above them and enjoyed the scenery, while eating her ice cream. She flew in the clouds, admiring the beauty of the world. Finally, when the sun was setting, Nina and her red balloon slowly made their way back home.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Take the following description and create a story.
+
+### Input:
+Nina had a single red balloon and a bowl of ice cream.
+
+### Response:
+Nina was eager to go on her first adventure. She had a single, bright red balloon and a bowl of cold and creamy ice cream. She took a deep breath and carefully opened the gate of her garden. She carefully untied her red balloon and soared up, high and higher still, into the blue sky above. She could see the houses and gardens getting smaller and smaller. Eventually she reached a beautiful meadow with multicolored flowers and buzzing insects. Nina floated above them and enjoyed the scenery, while eating her ice cream. She flew in the clouds, admiring the beauty of the world. Finally, when the sun was setting, Nina and her red balloon slowly made their way back home.",50,54,673,8,12,120
+"Given two sentences, identify any wrong grammar and word usage and revise the sentences.","I love watching movies with the familities.
+I heard it was going to rain heavily.","I love watching movies with the family.
+I heard it was going to rain heavily.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Given two sentences, identify any wrong grammar and word usage and revise the sentences.
+
+### Input:
+I love watching movies with the familities.
+I heard it was going to rain heavily.
+
+### Response:
+I love watching movies with the family.
+I heard it was going to rain heavily.",88,81,77,14,15,15
+Create a product description for this logo.,<attach image logo>,"This logo is for the brand, ""Nature's Way"". This brand believes that environmental sustainability and natural beauty should be preserved for future generations. Nature's Way strives to create products made from natural elements and materials that are both environmentally friendly and stylish. From eco-conscious shoes and clothing to renewable furniture and outdoor supplies, Nature's Way has all of your sustainable lifestyle needs covered. With Nature's Way, you won't just look good, you'll do good. Shop our selection of stylish and sustainably-sourced products today.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a product description for this logo.
+
+### Input:
+<attach image logo>
+
+### Response:
+This logo is for the brand, ""Nature's Way"". This brand believes that environmental sustainability and natural beauty should be preserved for future generations. Nature's Way strives to create products made from natural elements and materials that are both environmentally friendly and stylish. From eco-conscious shoes and clothing to renewable furniture and outdoor supplies, Nature's Way has all of your sustainable lifestyle needs covered. With Nature's Way, you won't just look good, you'll do good. Shop our selection of stylish and sustainably-sourced products today.",43,19,573,7,3,83
+Create a JavaScript program to print the maximum and minimum of given numbers?,,"function maxAndMin(nums){
+  let max = Math.max(...nums);
+  let min = Math.min(...nums);
+  console.log('Max value: ', max);
+  console.log('Min value: ', min);
+}","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a JavaScript program to print the maximum and minimum of given numbers?
+
+### Response:
+function maxAndMin(nums){
+  let max = Math.max(...nums);
+  let min = Math.min(...nums);
+  console.log('Max value: ', max);
+  console.log('Min value: ', min);
+}",78,0,159,13,0,19
+Arrange the letters P-R-O-B-L-E-M to form a word.,,Problem,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Arrange the letters P-R-O-B-L-E-M to form a word.
+
+### Response:
+Problem",49,0,7,8,0,1
+"Given an input sentence, find and replace the adjectives with stronger adjectives.",She was a happy girl.,She was a jubilant girl.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Given an input sentence, find and replace the adjectives with stronger adjectives.
+
+### Input:
+She was a happy girl.
+
+### Response:
+She was a jubilant girl.",82,21,24,12,5,5
+Explain what is the principle behind the electrical circuit.,,"The principle behind an electrical circuit is that electrical energy is transferred through a closed circuit, from a source of power (such as a battery) to a device that receives electrical energy (such as a light bulb). The electricity flows from the source of power through conductors such as wires and components such as resistors and switches, and then back to the source of power.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Explain what is the principle behind the electrical circuit.
+
+### Response:
+The principle behind an electrical circuit is that electrical energy is transferred through a closed circuit, from a source of power (such as a battery) to a device that receives electrical energy (such as a light bulb). The electricity flows from the source of power through conductors such as wires and components such as resistors and switches, and then back to the source of power.",60,0,385,9,0,65
+Write a dialogue between two friends discussing the pros and cons of online classes.,,"Friend 1: Have you heard about online classes?
+Friend 2: Yeah, I've heard a lot about them. What do you think about them? 
+Friend 1: Well, it seems like there are pros and cons with online classes. On the one hand, it gives a lot of flexibility with timing and geography, so you don't have to worry about commuting or attendance. But on the other hand, you don't have the same level of interaction with the professor or other students. 
+Friend 2: Yeah that's true. I've noticed that you don't get the same level of support as in a traditional classroom setting. But I think it's also important to note that there are a lot of resources available online that students can benefit from, such as video tutorials, chat rooms and discussion boards. 
+Friend 1: That's definitely a plus. I think online classes should be taken in moderation, as there is no substitute for personal interaction when it comes to learning.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Write a dialogue between two friends discussing the pros and cons of online classes.
+
+### Response:
+Friend 1: Have you heard about online classes?
+Friend 2: Yeah, I've heard a lot about them. What do you think about them? 
+Friend 1: Well, it seems like there are pros and cons with online classes. On the one hand, it gives a lot of flexibility with timing and geography, so you don't have to worry about commuting or attendance. But on the other hand, you don't have the same level of interaction with the professor or other students. 
+Friend 2: Yeah that's true. I've noticed that you don't get the same level of support as in a traditional classroom setting. But I think it's also important to note that there are a lot of resources available online that students can benefit from, such as video tutorials, chat rooms and discussion boards. 
+Friend 1: That's definitely a plus. I think online classes should be taken in moderation, as there is no substitute for personal interaction when it comes to learning.",84,0,912,14,0,161
+Edit the email for style and clarity,"Dear Amy,
+
+I hope you are doing well. I wanted to tell you about something exciting that happened last week. At the solar energy conference, New Horizon Manufactoring wants to meet with us to discuss the photovoltaic window system we’ll soon be launching.
+
+It would be great to meet this Tuesday.
+
+Sincerely,
+Allison","Dear Amy,
+
+I hope you are doing well. I'm excited to share that New Horizon Manufacturing has expressed an interest in meeting with us to discuss our upcoming photovoltaic window system. It would be great to schedule the meeting for this Tuesday, if possible.
+
+Best,
+Allison","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Edit the email for style and clarity
+
+### Input:
+Dear Amy,
+
+I hope you are doing well. I wanted to tell you about something exciting that happened last week. At the solar energy conference, New Horizon Manufactoring wants to meet with us to discuss the photovoltaic window system we’ll soon be launching.
+
+It would be great to meet this Tuesday.
+
+Sincerely,
+Allison
+
+### Response:
+Dear Amy,
+
+I hope you are doing well. I'm excited to share that New Horizon Manufacturing has expressed an interest in meeting with us to discuss our upcoming photovoltaic window system. It would be great to schedule the meeting for this Tuesday, if possible.
+
+Best,
+Allison",36,316,274,7,53,46
+Generate a correct python program to shift all the letters in a given word by two characters ahead.,Input word: apple,"def shift_word(word):
+        shifted_letter = """"
+        for letter in word:
+            letter_idx = ord(letter) + 2
+            if letter_idx > ord('z'):
+                letter_idx -= 26
+            shifted_letter += chr(letter_idx)
+        return shifted_letter
+
+print(shift_word('apple'))","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Generate a correct python program to shift all the letters in a given word by two characters ahead.
+
+### Input:
+Input word: apple
+
+### Response:
+def shift_word(word):
+        shifted_letter = """"
+        for letter in word:
+            letter_idx = ord(letter) + 2
+            if letter_idx > ord('z'):
+                letter_idx -= 26
+            shifted_letter += chr(letter_idx)
+        return shifted_letter
+
+print(shift_word('apple'))",99,17,293,18,3,27
+Design a logo for a company that specializes in custom cakes.,,"A creative logo for a company that specializes in custom cakes could include an image of a fondant-covered cake that is decorated with colorful buttercream swirls. The cake could be surrounded by miniature versions of various other cakes that resemble cupcakes, donuts, and other treats. The cake could be encircled by a banner with the company name, with the words ""Custom Cakes"" written in bold lettering.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Design a logo for a company that specializes in custom cakes.
+
+### Response:
+A creative logo for a company that specializes in custom cakes could include an image of a fondant-covered cake that is decorated with colorful buttercream swirls. The cake could be surrounded by miniature versions of various other cakes that resemble cupcakes, donuts, and other treats. The cake could be encircled by a banner with the company name, with the words ""Custom Cakes"" written in bold lettering.",61,0,407,11,0,66
+Describe the ideal outdoor workout,,"The ideal outdoor workout includes a combination of cardio and strength training. Begin with light cardio activities like jogging, biking, or brisk walking to warm up your muscles and increase your heart rate. Follow this with strength training exercises such as push-ups, squats, and sit-ups. Incorporate dynamic stretches to increase mobility and flexibility. Finish with a 5-10 minute cool down to slowly decrease your heart rate and help your muscles relax. Additionally, make sure to drink plenty of fluids and listen to your body’s cues.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe the ideal outdoor workout
+
+### Response:
+The ideal outdoor workout includes a combination of cardio and strength training. Begin with light cardio activities like jogging, biking, or brisk walking to warm up your muscles and increase your heart rate. Follow this with strength training exercises such as push-ups, squats, and sit-ups. Incorporate dynamic stretches to increase mobility and flexibility. Finish with a 5-10 minute cool down to slowly decrease your heart rate and help your muscles relax. Additionally, make sure to drink plenty of fluids and listen to your body’s cues.",34,0,543,5,0,85
+Generate a code snippet as output of this instruction.,,"// define an array 
+var myArray = [1, 2, 3, 4, 5]; 
+  
+// using for loop to iterate over the array 
+for (var i = 0; i < myArray.length; i++) { 
+    console.log(myArray[i]); 
+}","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Generate a code snippet as output of this instruction.
+
+### Response:
+// define an array 
+var myArray = [1, 2, 3, 4, 5]; 
+  
+// using for loop to iterate over the array 
+for (var i = 0; i < myArray.length; i++) { 
+    console.log(myArray[i]); 
+}",54,0,175,9,0,33
+Identify the term in the sentence that is an example of personification.,The wind whispered secrets through the trees.,Whispered,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Identify the term in the sentence that is an example of personification.
+
+### Input:
+The wind whispered secrets through the trees.
+
+### Response:
+Whispered",72,45,9,12,7,1
+Summarize the given text into 5 lines.,"Many people find security systems to be too costly, but they don't understand the high cost of ignoring such a system. Security systems are designed to deter potential criminals, detecting disturbances and alerting you to any threats. A good security system won't just protect your property, but also protect your family. You can also use them to monitor activity within your home while you're away.","Security systems are designed to protect your property and family from potential criminals and disturbances. They can alert you to potential threats, detect unusual activity and monitor your home while you're away. Despite the costs, the high cost of not having a security system is often much higher. Investing in a good security system can provide peace of mind and make your home a safer place for you and your family.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Summarize the given text into 5 lines.
+
+### Input:
+Many people find security systems to be too costly, but they don't understand the high cost of ignoring such a system. Security systems are designed to deter potential criminals, detecting disturbances and alerting you to any threats. A good security system won't just protect your property, but also protect your family. You can also use them to monitor activity within your home while you're away.
+
+### Response:
+Security systems are designed to protect your property and family from potential criminals and disturbances. They can alert you to potential threats, detect unusual activity and monitor your home while you're away. Despite the costs, the high cost of not having a security system is often much higher. Investing in a good security system can provide peace of mind and make your home a safer place for you and your family.",38,399,421,7,65,71
+Describe 3 common examples of cyber-crime,,"Cyber-crime is an unlawful act committed via the internet or other electronic means. Common examples of cyber-crime include identity theft, phishing and malware attacks. 
+
+Identity theft is the practice of stealing and using someone else’s identity for malicious purposes, such as applying for bank loans and credit cards in another person’s name. 
+
+Phishing is a type of cyber-crime where criminals send emails and messages that appear to be from a legitimate organization, such as a bank or online retailer, in an attempt to obtain personal information such as usernames, passwords, and credit card numbers. 
+
+Malware attacks are malicious software programs designed to infiltrate a computer system and steal information. Examples include ransomware, which encrypts files and demands payment in exchange for the files to be unlocked, and spyware, which secretly retrieves and transmits information from a user’s computer without their knowledge. 
+
+These are just a few examples of cyber-crimes, though new ones are constantly being developed. It is important for users to remain aware of the latest cyber-crime threats, practice caution when using the internet, and be sure to use security software, firewalls, and other protective measures.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe 3 common examples of cyber-crime
+
+### Response:
+Cyber-crime is an unlawful act committed via the internet or other electronic means. Common examples of cyber-crime include identity theft, phishing and malware attacks. 
+
+Identity theft is the practice of stealing and using someone else’s identity for malicious purposes, such as applying for bank loans and credit cards in another person’s name. 
+
+Phishing is a type of cyber-crime where criminals send emails and messages that appear to be from a legitimate organization, such as a bank or online retailer, in an attempt to obtain personal information such as usernames, passwords, and credit card numbers. 
+
+Malware attacks are malicious software programs designed to infiltrate a computer system and steal information. Examples include ransomware, which encrypts files and demands payment in exchange for the files to be unlocked, and spyware, which secretly retrieves and transmits information from a user’s computer without their knowledge. 
+
+These are just a few examples of cyber-crimes, though new ones are constantly being developed. It is important for users to remain aware of the latest cyber-crime threats, practice caution when using the internet, and be sure to use security software, firewalls, and other protective measures.",41,0,1243,6,0,187
+Describe an unusual vacation spot.,,"One unusual vacation spot is The Great Blue Hole in Belize. This is an immense submarine sinkhole with a diameter of over 300 metres and a depth of 125 metres. It is an incredible sight to see, with its unique azure blue colour standing out against the surrounding turquoise Caribbean Sea. There are guided scuba diving tours available, which take adventurers to the bottom of the Hole, where they can observe the unusual marine life and view the limestone formations. Above the surface, visitors can marvel at the surrounding coral reef, which is full of vibrant hues and diverse species of fish.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe an unusual vacation spot.
+
+### Response:
+One unusual vacation spot is The Great Blue Hole in Belize. This is an immense submarine sinkhole with a diameter of over 300 metres and a depth of 125 metres. It is an incredible sight to see, with its unique azure blue colour standing out against the surrounding turquoise Caribbean Sea. There are guided scuba diving tours available, which take adventurers to the bottom of the Hole, where they can observe the unusual marine life and view the limestone formations. Above the surface, visitors can marvel at the surrounding coral reef, which is full of vibrant hues and diverse species of fish.",34,0,597,5,0,102
+Name three differences between the corporate world and the freelance world.,,"The main differences between the corporate world and the freelance world are:
+1. Job security: Corporate jobs usually provide a more secure job with a consistent paycheck, while freelance gigs can be more unpredictable; 
+2. Flexibility: Corporate jobs usually require a more rigid and structured work environment, while freelance work allows for more flexibility in scheduling and workflows;
+3. Time: Corporate jobs often require a long-term commitment, while freelance gigs allow for more short-term and project-based work.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Name three differences between the corporate world and the freelance world.
+
+### Response:
+The main differences between the corporate world and the freelance world are:
+1. Job security: Corporate jobs usually provide a more secure job with a consistent paycheck, while freelance gigs can be more unpredictable; 
+2. Flexibility: Corporate jobs usually require a more rigid and structured work environment, while freelance work allows for more flexibility in scheduling and workflows;
+3. Time: Corporate jobs often require a long-term commitment, while freelance gigs allow for more short-term and project-based work.",75,0,524,11,0,77
+"In a gist, summarize this article.",The article deals with the debate surrounding genetically modified crops and its effects on society and the environment.,"This article discusses the pros and cons of genetically modified crops, exploring how they might affect the environment, health and society. Key topics include the potential economic impacts of allowing or banning the use of GM crops, their potential to benefit the health of consumers and their sustainability.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+In a gist, summarize this article.
+
+### Input:
+The article deals with the debate surrounding genetically modified crops and its effects on society and the environment.
+
+### Response:
+This article discusses the pros and cons of genetically modified crops, exploring how they might affect the environment, health and society. Key topics include the potential economic impacts of allowing or banning the use of GM crops, their potential to benefit the health of consumers and their sustainability.",34,120,311,6,18,48
+Edit the following sentence by adding an appropriate modifier. Output the entire sentence.,He walked to the bus stop.,He hurriedly walked to the bus stop.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Edit the following sentence by adding an appropriate modifier. Output the entire sentence.
+
+### Input:
+He walked to the bus stop.
+
+### Response:
+He hurriedly walked to the bus stop.",90,26,36,13,6,7
+Name three water-soluble vitamins,,"The three water-soluble vitamins are Vitamin C, Vitamin B Complex (B1, B2, B3, B5, B6, B7, B9, B12), and Vitamin E.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Name three water-soluble vitamins
+
+### Response:
+The three water-soluble vitamins are Vitamin C, Vitamin B Complex (B1, B2, B3, B5, B6, B7, B9, B12), and Vitamin E.",33,0,115,4,0,21
+Identify the plagiarized sentences from the text.,"This is the original sentence: I went to the store to buy some apples.
+This sentence is a plagiarized version of the original sentence: I went to the shop to buy some apples.","The plagiarized sentence is ""I went to the shop to buy some apples.""","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Identify the plagiarized sentences from the text.
+
+### Input:
+This is the original sentence: I went to the store to buy some apples.
+This sentence is a plagiarized version of the original sentence: I went to the shop to buy some apples.
+
+### Response:
+The plagiarized sentence is ""I went to the shop to buy some apples.""",49,174,68,7,33,13
+List the works of Shakespeare.,,"The works of Shakespeare include Romeo and Juliet, Hamlet, Macbeth, Julius Caesar, A Midsummer Night's Dream, Othello, King Lear, Antony and Cleopatra, The Merchant of Venice, Much Ado About Nothing, and The Tempest.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+List the works of Shakespeare.
+
+### Response:
+The works of Shakespeare include Romeo and Juliet, Hamlet, Macbeth, Julius Caesar, A Midsummer Night's Dream, Othello, King Lear, Antony and Cleopatra, The Merchant of Venice, Much Ado About Nothing, and The Tempest.",30,0,216,5,0,33
+Explain the core concepts of Machine Learning to an audiences consisting of a layman.,,"Machine Learning is a type of artificial intelligence (AI) that allows computers to learn and make predictions. It works by providing computers with data and algorithms which they can use to identify patterns in the data and then identify cause and effect relationships. This allows the computer to behave in a more 'intelligent' way, by making better predictions, or learning from experience. Machine Learning can be used in a variety of applications such as speech recognition, image recognition, recommendation systems, and natural language processing.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Explain the core concepts of Machine Learning to an audiences consisting of a layman.
+
+### Response:
+Machine Learning is a type of artificial intelligence (AI) that allows computers to learn and make predictions. It works by providing computers with data and algorithms which they can use to identify patterns in the data and then identify cause and effect relationships. This allows the computer to behave in a more 'intelligent' way, by making better predictions, or learning from experience. Machine Learning can be used in a variety of applications such as speech recognition, image recognition, recommendation systems, and natural language processing.",85,0,555,14,0,84
+Construct a SQL query to determine the total number of customers in each country.,,"SELECT country, COUNT(*) AS total_customers 
+FROM customers 
+GROUP BY country;","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Construct a SQL query to determine the total number of customers in each country.
+
+### Response:
+SELECT country, COUNT(*) AS total_customers 
+FROM customers 
+GROUP BY country;",81,0,78,14,0,10
+Describe a green apple.,,"A green apple is a round fruit with a firm outer skin. The skin may be smooth or have waxy ridges. The flesh is crisp and usually tart or sour. The color ranges from light to dark green depending on the variety. The core of the apple is white and filled with small, light-colored seeds.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe a green apple.
+
+### Response:
+A green apple is a round fruit with a firm outer skin. The skin may be smooth or have waxy ridges. The flesh is crisp and usually tart or sour. The color ranges from light to dark green depending on the variety. The core of the apple is white and filled with small, light-colored seeds.",23,0,286,4,0,55
+Convert the sentence from an interrogative to a declarative sentence.,Where is she?,She is there.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Convert the sentence from an interrogative to a declarative sentence.
+
+### Input:
+Where is she?
+
+### Response:
+She is there.",69,13,13,10,3,3
+Select the correct past tense verb for the following sentence: She ____ to the store.,,went,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Select the correct past tense verb for the following sentence: She ____ to the store.
+
+### Response:
+went",85,0,4,15,0,1
+Create a recipe for a Creamy Tomato Soup.,,"Ingredients: 1 onion, diced; 2 cloves garlic, minced; 2 tablespoons olive oil; 28 ounces canned crushed tomatoes; 2 cups vegetable or chicken stock; 1 teaspoon dried oregano; 1 teaspoon dried basil; 1/2 teaspoon sugar; 1/2 teaspoon salt; 1/4 teaspoon ground black pepper; 1/2 cup heavy cream. 
+
+Instructions: 
+1. Heat the olive oil in a large pot over medium heat. Add the onion and garlic and cook until soft, about 3 minutes. 
+2. Add the crushed tomatoes, stock, oregano, basil, sugar, salt, and pepper. Bring to a simmer and cook for 15 minutes. 
+3. Remove from heat and stir in the cream. 
+4. Puree with an immersion blender or in two batches in a blender until smooth. 
+5. Return to pot and bring to a simmer if necessary. Serve hot.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a recipe for a Creamy Tomato Soup.
+
+### Response:
+Ingredients: 1 onion, diced; 2 cloves garlic, minced; 2 tablespoons olive oil; 28 ounces canned crushed tomatoes; 2 cups vegetable or chicken stock; 1 teaspoon dried oregano; 1 teaspoon dried basil; 1/2 teaspoon sugar; 1/2 teaspoon salt; 1/4 teaspoon ground black pepper; 1/2 cup heavy cream. 
+
+Instructions: 
+1. Heat the olive oil in a large pot over medium heat. Add the onion and garlic and cook until soft, about 3 minutes. 
+2. Add the crushed tomatoes, stock, oregano, basil, sugar, salt, and pepper. Bring to a simmer and cook for 15 minutes. 
+3. Remove from heat and stir in the cream. 
+4. Puree with an immersion blender or in two batches in a blender until smooth. 
+5. Return to pot and bring to a simmer if necessary. Serve hot.",41,0,738,8,0,129
+What is the best way to attain financial freedom?,,"The best way to attain financial freedom is to start by budgeting and living within your means. Setting financial goals and tracking your progress is important in the attainment of financial freedom. It is also important to save up for any large purchases, invest in a diversified portfolio, and reduce debt. Additionally, ensure that you build a reliable emergency fund to help you in any unexpected financial situations that arise.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+What is the best way to attain financial freedom?
+
+### Response:
+The best way to attain financial freedom is to start by budgeting and living within your means. Setting financial goals and tracking your progress is important in the attainment of financial freedom. It is also important to save up for any large purchases, invest in a diversified portfolio, and reduce debt. Additionally, ensure that you build a reliable emergency fund to help you in any unexpected financial situations that arise.",49,0,433,9,0,70
+"Given two items, evaluate which is better according to a certain criteria.","Item1: Nintendo Switch Lite
+Item2: Xbox One S
+Criteria: Portability",Nintendo Switch Lite is better according to the criteria of portability.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Given two items, evaluate which is better according to a certain criteria.
+
+### Input:
+Item1: Nintendo Switch Lite
+Item2: Xbox One S
+Criteria: Portability
+
+### Response:
+Nintendo Switch Lite is better according to the criteria of portability.",74,67,72,12,10,11
+Turn a paragraph of text into bullet points.,"The town of Maplewood is located in south-central New Jersey. It is known for its small town charm, celebrated annual festivals, and convenient public transport options.","• The town of Maplewood is located in south-central New Jersey 
+• Known for its small town charm 
+• Celebrated annual festivals 
+• Convenient public transport options","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Turn a paragraph of text into bullet points.
+
+### Input:
+The town of Maplewood is located in south-central New Jersey. It is known for its small town charm, celebrated annual festivals, and convenient public transport options.
+
+### Response:
+• The town of Maplewood is located in south-central New Jersey 
+• Known for its small town charm 
+• Celebrated annual festivals 
+• Convenient public transport options",44,169,166,8,26,27
+Review the following code snippet and suggest any improvements.,"list1 = [1, 2, [3, 4]]
+list2 = [5, 6]
+list1.append(list2)","list1 = [1, 2, [3, 4]]
+list2 = [5, 6]
+list1.extend(list2) # extend operates on list elements rather than appending the entire list","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Review the following code snippet and suggest any improvements.
+
+### Input:
+list1 = [1, 2, [3, 4]]
+list2 = [5, 6]
+list1.append(list2)
+
+### Response:
+list1 = [1, 2, [3, 4]]
+list2 = [5, 6]
+list1.extend(list2) # extend operates on list elements rather than appending the entire list",63,57,130,9,11,23
+Create a metaphor to describe the situation of today’s job market.,,"The job market today is like a minefield - employers are the picketted soldiers, and job seekers are the metal detectors, carefully going through process after process to uncover a job they can take on.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a metaphor to describe the situation of today’s job market.
+
+### Response:
+The job market today is like a minefield - employers are the picketted soldiers, and job seekers are the metal detectors, carefully going through process after process to uncover a job they can take on.",66,0,202,11,0,35
+Name three advantages of using machine learning for natural language processing.,,"Three advantages of using machine learning for natural language processing are higher accuracy and speed, data-driven decisions and better predictions, and capability to adapt to new datasets.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Name three advantages of using machine learning for natural language processing.
+
+### Response:
+Three advantages of using machine learning for natural language processing are higher accuracy and speed, data-driven decisions and better predictions, and capability to adapt to new datasets.",80,0,192,11,0,27
+Reorder the sentences below to make a logical paragraph,"A) This task will generate an appropriate output.
+B) It is important to properly structure the output.
+C) The output should be provided in a logical sequence.","C) The output should be provided in a logical sequence.
+B) It is important to properly structure the output.
+A) This task will generate an appropriate output.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Reorder the sentences below to make a logical paragraph
+
+### Input:
+A) This task will generate an appropriate output.
+B) It is important to properly structure the output.
+C) The output should be provided in a logical sequence.
+
+### Response:
+C) The output should be provided in a logical sequence.
+B) It is important to properly structure the output.
+A) This task will generate an appropriate output.",55,158,158,9,27,27
+Describe the biggest challenge facing health care in the United States today.,,"The biggest challenge facing health care in the United States today is the high cost of care and lack of access to adequate care for all individuals, regardless of their socioeconomic status. This can lead to health disparities, where those who can afford it have access to better care and coverage than those who cannot. This can lead to worsened health outcomes and an unequal distribution of care.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Describe the biggest challenge facing health care in the United States today.
+
+### Response:
+The biggest challenge facing health care in the United States today is the high cost of care and lack of access to adequate care for all individuals, regardless of their socioeconomic status. This can lead to health disparities, where those who can afford it have access to better care and coverage than those who cannot. This can lead to worsened health outcomes and an unequal distribution of care.",77,0,400,12,0,68
+Explain what is sentiment analysis.,,"Sentiment analysis is a type of natural language processing that uses machine learning algorithms to identify and extract opinions from text data. It is used to analyze the sentiment of a text, i.e. whether it is positive, negative, or neutral. This can be useful for gauging customer sentiment and feedback, as well as monitoring public opinion on social media platforms and online reviews.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Explain what is sentiment analysis.
+
+### Response:
+Sentiment analysis is a type of natural language processing that uses machine learning algorithms to identify and extract opinions from text data. It is used to analyze the sentiment of a text, i.e. whether it is positive, negative, or neutral. This can be useful for gauging customer sentiment and feedback, as well as monitoring public opinion on social media platforms and online reviews.",35,0,391,5,0,63
+What is the meaning of the French phrase 'Bonne chance'?,,"Bonne chance means ""good luck"" in French.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+What is the meaning of the French phrase 'Bonne chance'?
+
+### Response:
+Bonne chance means ""good luck"" in French.",56,0,41,10,0,7
+What is the difference between an iOS and Android phone?,,"The main difference between iOS and Android phones is their operating system. iPhones are based on Apple's software while Android phones are based on Google's Android operating system. Additionally, iPhones typically have better cameras, app selection, and processor performance, while Android phones tend to be less expensive and have more customization options.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+What is the difference between an iOS and Android phone?
+
+### Response:
+The main difference between iOS and Android phones is their operating system. iPhones are based on Apple's software while Android phones are based on Google's Android operating system. Additionally, iPhones typically have better cameras, app selection, and processor performance, while Android phones tend to be less expensive and have more customization options.",56,0,363,10,0,52
+Generate a 500 word story about a story centered on a robotic cat,"John loved cats and dreamed of having one, but his family didn't have the resources to take care of an animal. One day, John heard about the new robotic cats and decided to save his money for one.","John was so excited about all the possibilities robotic cats had to offer. He'd heard about them from a friend who had purchased one and couldn't stop talking about how lifelike it was and all the fun activities it could do.
+
+With the money he had saved up, John headed to the nearest robotic pet store. He was amazed at the sheer number of robots there, from dogs and cats to birds and rodents. Finally, he saw a robotic cat he thought was absolutely perfect.
+
+It was a beautiful black and white tuxedo cat with emerald green eyes. It had realistic fur, just like a real cat, and moved just like a real cat. John was amazed and fell in love with it instantly.
+
+He took the robotic cat home and named it Snowball. He took Snowball for walks around the neighbourhood and to the park. Neighbours and passersby were always mesmerized by the robotic cat and often stopped to pet it and ask questions.
+
+John and Snowball soon became inseparable. They went on adventures together, explored the outdoors, and discovered new places. Everywhere they went, people stopped to look at Snowball and ask questions. 
+
+The two of them were a big hit and soon had a growing fan base. People couldn't get enough of this robotic cat and wanted to know more.
+
+John was thrilled to have a robotic cat as a companion. After years of dreaming and waiting, his wish had finally come true. He and Snowball were best friends forever, and they had some truly remarkable adventures together.","Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Generate a 500 word story about a story centered on a robotic cat
+
+### Input:
+John loved cats and dreamed of having one, but his family didn't have the resources to take care of an animal. One day, John heard about the new robotic cats and decided to save his money for one.
+
+### Response:
+John was so excited about all the possibilities robotic cats had to offer. He'd heard about them from a friend who had purchased one and couldn't stop talking about how lifelike it was and all the fun activities it could do.
+
+With the money he had saved up, John headed to the nearest robotic pet store. He was amazed at the sheer number of robots there, from dogs and cats to birds and rodents. Finally, he saw a robotic cat he thought was absolutely perfect.
+
+It was a beautiful black and white tuxedo cat with emerald green eyes. It had realistic fur, just like a real cat, and moved just like a real cat. John was amazed and fell in love with it instantly.
+
+He took the robotic cat home and named it Snowball. He took Snowball for walks around the neighbourhood and to the park. Neighbours and passersby were always mesmerized by the robotic cat and often stopped to pet it and ask questions.
+
+John and Snowball soon became inseparable. They went on adventures together, explored the outdoors, and discovered new places. Everywhere they went, people stopped to look at Snowball and ask questions. 
+
+The two of them were a big hit and soon had a growing fan base. People couldn't get enough of this robotic cat and wanted to know more.
+
+John was thrilled to have a robotic cat as a companion. After years of dreaming and waiting, his wish had finally come true. He and Snowball were best friends forever, and they had some truly remarkable adventures together.",65,196,1463,13,38,261
+Generate an equation that describes the motion of a ball dropped from a height,,"The equation for the motion of a ball dropped from a height is s = {1 \over 2}gt^2, where s is the displacement (distance) of the ball from its starting point, g is the acceleration due to gravity (9.8 m/s^2), and t is the time elapsed. This equation expresses the fact that the ball's velocity increases by an amount proportional to the acceleration due to gravity with each second that passes.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Generate an equation that describes the motion of a ball dropped from a height
+
+### Response:
+The equation for the motion of a ball dropped from a height is s = {1 \over 2}gt^2, where s is the displacement (distance) of the ball from its starting point, g is the acceleration due to gravity (9.8 m/s^2), and t is the time elapsed. This equation expresses the fact that the ball's velocity increases by an amount proportional to the acceleration due to gravity with each second that passes.",78,0,395,14,0,71
+"Given a list of numbers, find the 3rd largest number.","[1,7,9,11,12,14,18,21]",The 3rd largest number in the list is 14.,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Given a list of numbers, find the 3rd largest number.
+
+### Input:
+[1,7,9,11,12,14,18,21]
+
+### Response:
+The 3rd largest number in the list is 14.",53,22,41,10,1,9
+"Provide an example of an appropriate output for the sentence ""Please recommend some books to read"".",,"Here are some books that I would recommend reading: ""The Catcher in the Rye"" by J.D. Salinger, ""Pride and Prejudice"" by Jane Austen, ""The Great Gatsby"" by F. Scott Fitzgerald, ""The Hunger Games"" by Suzanne Collins, and ""To Kill a Mockingbird"" by Harper Lee.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Provide an example of an appropriate output for the sentence ""Please recommend some books to read"".
+
+### Response:
+Here are some books that I would recommend reading: ""The Catcher in the Rye"" by J.D. Salinger, ""Pride and Prejudice"" by Jane Austen, ""The Great Gatsby"" by F. Scott Fitzgerald, ""The Hunger Games"" by Suzanne Collins, and ""To Kill a Mockingbird"" by Harper Lee.",99,0,257,16,0,44
+Create a unique character in a fairy tale.,,"In the magical kingdom lived a fairy named Gwendolyn. She was a mysterious character who lived in an abandoned castle and rarely ventured out of her secret home. With her magical staff in one hand, she ventured deep into enchanted forests, helping those in need with her healing spells and enchantments.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a unique character in a fairy tale.
+
+### Response:
+In the magical kingdom lived a fairy named Gwendolyn. She was a mysterious character who lived in an abandoned castle and rarely ventured out of her secret home. With her magical staff in one hand, she ventured deep into enchanted forests, helping those in need with her healing spells and enchantments.",42,0,303,8,0,51
+Create a tweet to promote the importance of mask-wearing during the Covid-19 pandemic.,,Wearing a mask isn't just about protecting yourself – it's about protecting the people around you! #MaskUpForAll #Covid19,"Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create a tweet to promote the importance of mask-wearing during the Covid-19 pandemic.
+
+### Response:
+Wearing a mask isn't just about protecting yourself – it's about protecting the people around you! #MaskUpForAll #Covid19",86,0,121,13,0,18
+Calculate the mean of this list,"[1, 5, 3, 8, 4]",4.4,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Calculate the mean of this list
+
+### Input:
+[1, 5, 3, 8, 4]
+
+### Response:
+4.4",31,15,3,6,5,1
+Suppose you want an assistant to play a song on Spotify. How would you phrase it?,,"Please play the song ""___"" on Spotify.","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Suppose you want an assistant to play a song on Spotify. How would you phrase it?
+
+### Response:
+Please play the song ""___"" on Spotify.",81,0,38,16,0,7
+Generate a natural language response for a given input.,Hello.,Hi there! How can I help you?,"Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+Generate a natural language response for a given input.
+
+### Input:
+Hello.
+
+### Response:
+Hi there! How can I help you?",55,6,29,9,1,7
+Create three questions related to the spread of viruses.,,"1. What are the common ways that viruses spread? 
+2. What are some preventive measures to reduce the spread of viruses?
+3. How can we protect vulnerable populations from virus spread?","Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+Create three questions related to the spread of viruses.
+
+### Response:
+1. What are the common ways that viruses spread? 
+2. What are some preventive measures to reduce the spread of viruses?
+3. How can we protect vulnerable populations from virus spread?",56,0,183,9,0,31

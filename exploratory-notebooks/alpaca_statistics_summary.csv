@@ -1,0 +1,2 @@
+Total Samples,Samples with Input,Samples without Input,Avg Instruction Length (words),Avg Input Length (words),Avg Output Length (words),Max Output Length (words),Min Output Length (words)
+52002,20679,31323,10.06363216799354,3.93563709088112,44.18285835160186,717,0

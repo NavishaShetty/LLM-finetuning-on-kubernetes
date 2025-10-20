@@ -1,0 +1,202 @@
+[
+  {
+    "instruction": "What would be the best type of exercise for a person who has arthritis?",
+    "input": "(none)",
+    "reference": "For someone with arthritis, the best type of exercise would be low-impact activities like yoga, swimming, or walking. These exercises provide the benefits of exercise without exacerbating the symptoms of arthritis.",
+    "base_prediction": "What would be the best type of exercise for a person who has arthritis?",
+    "finetuned_prediction": "A good type of exercise for someone with arthritis is low-impact aerobic exercises such as walking, swimming, cycling, or yoga. Strength training and stretching can also help to improve joint mobility and reduce pain. Additionally, weightlifting, resistance bands, and other forms of resistance training can be beneficial. Finally, yoga and Tai Chi can also be helpful in managing arthritis symptoms. All types of physical activity should be tailored to the individual's specific needs and limitations. It is important to",
+    "base_length": 14,
+    "finetuned_length": 79,
+    "reference_length": 31
+  },
+  {
+    "instruction": "Calculate the atomic mass for lithium.",
+    "input": "(none)",
+    "reference": "The atomic mass for lithium is 6.941 u (units). This is determined from the number of protons and neutrons in the nucleus of a lithium atom, which is 3 protons and 4 neutrons. Each proton and neutron has a mass of 1.007 u, resulting in a total mass of 6.941 u.",
+    "base_prediction": "Calculate the atomic mass for lithium. 2.3.1.3 Calculate the molar mass for carbon. 2.3.1.4 Calculate the molecular weight for chlorine. 2.3.1.5 Calculate the number of protons in the first ionizing electron of hydrogen. 2.3.1.6 Calculate the number of electrons in the first valence electron of oxygen. 2.3.1.7 Calculate the charge on an atom. 2.3.1.8 Calculate the mass of an atom based on its charge. 2.3.1.9 Calculate the volume of a sphere with a given",
+    "finetuned_prediction": "The atomic mass of Lithium is 6.941 u. It can be calculated using the formula A = (A + B) * C / D, where A is the element, B and C are the number of neutrons and protons respectively, respectively, and D is a factor that depends on the atomic number and composition of the element. In this case, the atomic mass of Lithium is 6.941 u. Therefore, its atomic mass is 6.941 x 0.618 x 2 = 15.37 u. This is equal to",
+    "base_length": 74,
+    "finetuned_length": 85,
+    "reference_length": 51
+  },
+  {
+    "instruction": "Convert the following binary code to ASCII characters.",
+    "input": "01110101 01100001 01110010 01101001 01110100",
+    "reference": "The ASCII characters for the binary code is: wast.",
+    "base_prediction": "Convert the following binary code to ASCII characters.\n\nInput: 01110101 01100001 01110010 01101001 01110100 01111111 01100001\n\nOutput: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n```\n\nTo convert the binary code to ASCII characters, we can use a loop that iterates over each bit in the binary code and converts it to its corresponding ASCII character. We start",
+    "finetuned_prediction": "The binary code \"01110101\" is converted to ASCII characters as follows: 'A' (97), 'B' (98), 'C' (99), 'D' (100), 'E' (101), 'F' (102). Thus, the ASCII character corresponding to the binary code \"01",
+    "base_length": 51,
+    "finetuned_length": 33,
+    "reference_length": 9
+  },
+  {
+    "instruction": "Take this sentence and make it more descriptive: She was scared.",
+    "input": "She was scared.",
+    "reference": "She was trembling with fear, her heart racing wildly and her breath coming in short, panicked gasps. She felt her palms begin to sweat and her stomach tying itself into knots.  She was scared.",
+    "base_prediction": "Take this sentence and make it more descriptive: She was scared.\n\nInput: She was scared.\n\nOutput: She was afraid.\n\nExample 3:\nSentence: I'm not good at cooking.\n\nInput: I'm not good at cooking.\n\nOutput: I am not good at cooking.\n\nExample 4:\nSentence: He can't play the guitar.\n\nInput: He can't play the guitar.\n\nOutput: He cannot play the guitar.\n\nExample 5:\nSentence: He doesn't like pizza.\n\nInput: He doesn't like pizza.",
+    "finetuned_prediction": "She was visibly trembling, her hands clenched tightly around her chest in fear. Her heart raced as she tried to regulate her breathing, her mind racing with thoughts of what could possibly be happening. She felt like a stranger in her own body, unable to move or speak. Her senses were on high alert, waiting for any sign of danger. She was completely paralyzed by the fear that gripped her. \n\nHer palms sweated as she looked up at the sky, searching for answers",
+    "base_length": 72,
+    "finetuned_length": 83,
+    "reference_length": 34
+  },
+  {
+    "instruction": "Brainstorm 3 possible ideas to promote the following product",
+    "input": "New motorized skateboard",
+    "reference": "1. Offer a free trial for a limited time.\n2. Give away several skateboards in a raffle or sweepstakes.\n3. Host a promotional event featuring the skateboard doing stunts in various locations.",
+    "base_prediction": "Brainstorm 3 possible ideas to promote the following product\n\nInput: New motorized skateboard with advanced features, targeted towards young adults aged 18-35 years old. Ideas:\n\n1. Social media campaign using influencers and brand ambassadors to promote the product through various platforms (Instagram, Twitter, Facebook)\n2. Giveaway contest on social media platforms for users who tag their friends in a photo or video of riding the product\n3. Collaboration with local skate parks to provide free lessons and demo sessions to showcase the product's features\n4. Offering a discount to first-time customers who purchase the product as part",
+    "finetuned_prediction": "1. Create a website that showcases the product and its features, with interactive videos, images, and customer reviews. \n2. Partner with influencers in the skateboarding community to create content around the new board and their experience using it.\n3. Host giveaways on social media, offering customers who share their experience of the product with their friends a chance to win one for themselves. This would also help to spread awareness about the product among people who are interested but may not know about it yet. \n4. Develop an",
+    "base_length": 97,
+    "finetuned_length": 88,
+    "reference_length": 32
+  },
+  {
+    "instruction": "Rewrite the sentence using imperative mood.",
+    "input": "Please pick up the book from the shelf.",
+    "reference": "Pick up the book from the shelf.",
+    "base_prediction": "Rewrite the sentence using imperative mood.\n\nInput: Please pick up the book from the shelf.\nOutput: Please use the imperative mood to ask for someone to pick up the book from the shelf.",
+    "finetuned_prediction": "Please pick up the book from the shelf.\n\nThe imperative mood is used to request a specific action that must be taken. In this case, \"pick up\" means to retrieve something from a location. The imperative mood is used to tell someone to act in a certain way or to indicate a command. It is used to give orders and direct people's behavior.\n\nIn this context, it is important to use the imperative mood because the person asking for the book has not yet done so themselves. They are simply",
+    "base_length": 33,
+    "finetuned_length": 90,
+    "reference_length": 7
+  },
+  {
+    "instruction": "Describe a picnic vacation where four people are travelling together.",
+    "input": "Four people are travelling together to a picnic vacation.",
+    "reference": "The four friends decided to take a picnic vacation to the countryside. They packed their sandwiches and snacks, filled thermoses with hot tea, and wore their warmest coats. They spent their days exploring the incredible landscapes, and in the evenings they sat around a campfire singing and enjoying each other's company. They spent their days immersed in nature, getting to know the hidden gems of the place. When they returned home, they were filled with beautiful memories that would last a lifetime.",
+    "base_prediction": "Describe a picnic vacation where four people are travelling together.\n\nInput: Four people are travelling together to a picnic vacation. The picnic location is a beach in Hawaii. The four friends are named Sarah, Mike, Emily, and Alex.\n\nOutput:\nSarah, the adventurous one, has brought her camera with her so she can take photos of the beautiful scenery while we relax on the beach.\nMike, the sports enthusiast, is bringing his soccer ball and football to play with the kids at the park.\nEmily, the fashionista, is carrying her camera so she can capture some stunning sunsets over the ocean.\n",
+    "finetuned_prediction": "Four friends, Bob, Jane, David and Sarah are travelling together for a picnic vacation. They have booked their accommodations, rented bikes, and arranged for transportation from the nearest town. As they embark on their journey, they all smile at each other as they set off into the beautiful countryside. They stop to take in the stunning views, while enjoying a delicious picnic lunch. The sun is shining and the weather is warm, making for",
+    "base_length": 100,
+    "finetuned_length": 74,
+    "reference_length": 82
+  },
+  {
+    "instruction": "Explain the concept of Big Data and what it means for companies and customers.",
+    "input": "(none)",
+    "reference": "Big Data is the massive volume of data that is generated from companies\u2019 interactions with customers, both online and offline. This data includes customer data such as age, gender, location, behaviors, preferences, and transactions. This data enables companies to gain insights into customer behavior and to develop data-driven marketing strategies. For customers, Big Data provides personalized and tailored experiences, as companies can use the data they have collected to offer more targeted content and customized products or services.",
+    "base_prediction": "Explain the concept of Big Data and what it means for companies and customers.",
+    "finetuned_prediction": "Big Data is a term used to describe large volumes of data that are created by various applications, devices, systems, and networks in real-time. It can be used to analyze vast amounts of data that are unstructured, unconnected, and diverse. Companies and customers can leverage this data to gain insights into customer behavior, create better products and services, improve operational efficiencies, and develop new business models. Big Data also enables organizations to make informed decisions and take action quickly, which can lead to increased profitability and growth. Furthermore, companies can use the data",
+    "base_length": 14,
+    "finetuned_length": 93,
+    "reference_length": 78
+  },
+  {
+    "instruction": "Analyze the given phrase in terms of its connotations.",
+    "input": "Wild goose chase",
+    "reference": "The phrase \"wild goose chase\" is typically used to describe a futile and time-consuming endeavor. It can also connote a sense of futility, as trying to find something that one might never find is generally not seen as a worthwhile use of time and energy. Additionally, it implies a sense of confusion, as the phrase itself refers to a scavenger hunt with a disappearing prize.",
+    "base_prediction": "Analyze the given phrase in terms of its connotations.\n\nInput: Wild goose chase\nOutput: A wild, unpredictable and sometimes fruitless search for something or someone.\n\nExplanation: The phrase \"wild goose chase\" has a negative connotation due to the implied lack of success or direction. It can be seen as a frustrating and time-consuming pursuit that is not beneficial to the end goal.",
+    "finetuned_prediction": "The phrase \"wild goose chase\" connotes a search for something elusive and unattainable, as if the person is chasing after something that cannot be found or accomplished. It also implies a sense of irritation or frustration, as if the person is wasting their time on an unsuccessful endeavor. It can also suggest a sense of defeat, as if the person has failed to achieve what they set out to do. The phrase conveys a feeling of being lost and disoriented, with no clear direction",
+    "base_length": 62,
+    "finetuned_length": 84,
+    "reference_length": 65
+  },
+  {
+    "instruction": "List three potential sources for the following research problem.",
+    "input": "What are the benefits of online learning?",
+    "reference": "1. Journal of Online Learning Research \n2. Harvard Business Review \n3. Educational Technology & Society",
+    "base_prediction": "List three potential sources for the following research problem.\n\nInput: What are the benefits of online learning?\n\nOutput: Benefits of Online Learning\n\nBenefit 1: Increased Accessibility and Availability\n\nOnline learning can be accessed from anywhere at any time, making it more convenient than traditional classroom settings. This is especially beneficial for students who may not have access to a physical location or face-to-face interaction with their professors. For example, online courses can provide students with an opportunity to learn at their own pace and from the comfort of their home or workplace.\n\nBenefit 2: Improved Quality and Accuracy\n\nOn",
+    "finetuned_prediction": "Three potential sources for the research problem \"What are the benefits of online learning?\" could be academic journals, books, and websites related to education, technology, or business. Additionally, a literature review of existing studies could also be conducted to provide a comprehensive overview of the topic. Furthermore, surveys and interviews with teachers, students, and parents can be used to gain further insights into the topic. Finally, government websites and reports on digital literacy initiatives could be used as additional sources of information. All these sources will help in understanding the potential benefits",
+    "base_length": 99,
+    "finetuned_length": 92,
+    "reference_length": 15
+  },
+  {
+    "instruction": "Arrange the following countries in ascending order of GDP per capita.",
+    "input": "China, US, India, Japan",
+    "reference": "India, China, Japan, US",
+    "base_prediction": "Arrange the following countries in ascending order of GDP per capita.\n\nInput: China, US, India, Japan, South Korea\n\nOutput: China, United States, India, Japan, South Korea\n\nExplanation: The countries with the highest GDP per capita are China, United States, India, and Japan, followed by South Korea.",
+    "finetuned_prediction": "US, China, India, Japan (in descending order of GDP per capita) \n\nIndia is currently the highest-ranked country by GDP per capita. It has an estimated GDP per capita of $2,107 while the United States is ranked second at $24,391 and China is third at $25,875. Japan is the lowest ranked country with an estimated GDP per capita of only $1,308. The rankings are",
+    "base_length": 46,
+    "finetuned_length": 63,
+    "reference_length": 4
+  },
+  {
+    "instruction": "Name the boat depicted in the provided photo.",
+    "input": "Attached photo",
+    "reference": "The boat in the photo is a sailboat.",
+    "base_prediction": "Name the boat depicted in the provided photo.\n\nInput: Attached photo of a sailboat named \"Sailing Ship\"\nOutput: Sailing Ship",
+    "finetuned_prediction": "The boat is a sailboat. It has a large mast with sails, and two smaller masts on either side. The deck of the boat has a cockpit for the captain to control the vessel and look out over the sea. The sides of the boat are made of wood, and the hull is constructed of steel. The bow of the boat has a prow, while the stern has a sternpost. The boat has a small engine that powers it. The boat is usually used for recreational purposes. It is often seen in harbors and coastal areas",
+    "base_length": 20,
+    "finetuned_length": 96,
+    "reference_length": 8
+  },
+  {
+    "instruction": "Edit the grammar and punctuation of the given sentence.",
+    "input": "Humor is one of the most important ingredients of life",
+    "reference": "Humor is one of the most important ingredients in life.",
+    "base_prediction": "Edit the grammar and punctuation of the given sentence.\n\nInput: Humor is one of the most important ingredients of life.\nOutput: Humor is an essential component of life.",
+    "finetuned_prediction": "Humor is one of the most important elements of life.  (No spaces between words) \n\nHumor is one of the most important elements in life. (No spaces between words) \n\nHumor is a vital component of life. (No spaces between words) \n\nHumor is an essential ingredient of life. (No spaces between words) \n\nHumor is an indispensable part of life. (No spaces between words) \n\nH",
+    "base_length": 28,
+    "finetuned_length": 62,
+    "reference_length": 10
+  },
+  {
+    "instruction": "Calculate the length of the hypotenuse in the following triangle.",
+    "input": "![alt text](https://www.onlinemathlearning.com/image-files/triangle-hypotenuse-length.png \"Right Triangle\")",
+    "reference": "The length of the hypotenuse in the triangle is 5.  To calculate this, we use the Pythagorean theorem, which states that the square of the hypotenuse is equal to the sum of the squares of the other two sides. In this case, the other two sides have lengths of 3 and 4, so the hypotenuse must have a length of 5.",
+    "base_prediction": "Calculate the length of the hypotenuse in the following triangle.\n\nInput: ![alt text](https://www.onlinemathlearning.com/image-files/triangle-hypotenuse-length.png \"Right Triangle\")\n\nOutput: 12\n```\ndef calculate_hypotenuse(base, height):\n    return (base ** 0.5) + (height ** 0.5)\n\n# Example input and output\nbase = 8\nheight = 4\nresult = calculate_hypotenuse(base, height)\nprint(\"The length of the hypotenuse is\", result)\n```\n\n6. Find the",
+    "finetuned_prediction": "The length of the hypotenuse is 10 units. This can be calculated using the formula for side length: \u221a(a\u00b2 + b\u00b2 - c\u00b2) = \u221a((b\u00b2 + c\u00b2) - (a\u00b2)) = \u221a(4 - 2)(3) = 10. The base of the right triangle measures 5 units, and its height is",
+    "base_length": 55,
+    "finetuned_length": 48,
+    "reference_length": 61
+  },
+  {
+    "instruction": "How many instruments does a symphony orchestra typically have?",
+    "input": "(none)",
+    "reference": "A symphony orchestra typically has anywhere from 60 to 100 different instruments in its ensemble.",
+    "base_prediction": "How many instruments does a symphony orchestra typically have?",
+    "finetuned_prediction": "A symphony orchestra typically has around 80 to 100 players. This includes the principal musicians, such as conductors and soloists, as well as other musicians such as singers, instrumentalists, and percussionists. The size of the ensemble can vary depending on the type of music being played and the specific needs of the performance. In addition, some orchestras may also include brass, woodwinds, and string sections. Generally, a symphony orchestra is composed of several different instruments and ensembles, with each piece requiring its own unique combination of",
+    "base_length": 9,
+    "finetuned_length": 86,
+    "reference_length": 15
+  },
+  {
+    "instruction": "Summarize the phrase: \"GPT is a natural language processing architecture.\"",
+    "input": "(none)",
+    "reference": "GPT is a deep learning-based natural language processing architecture designed to generate highly realistic and human-like text and speech.",
+    "base_prediction": "Summarize the phrase: \"GPT is a natural language processing architecture.\"\n\nAnswer: GPT is a natural language processing architecture that uses a transformer model to generate text.",
+    "finetuned_prediction": "GPT (Generative Pre-trained Transformer) is an artificial intelligence model that processes natural language input and generates outputs. It is based on a transformer architecture, which consists of multiple layers of neural networks that work together to understand the meaning and structure of the input data. GPT can be used for tasks such as generating text, question answering, image generation, and more. It has been used extensively in various applications, including text generation and machine translation. The success of GPT has led to its widespread adoption in the field of AI and its potential to revolution",
+    "base_length": 26,
+    "finetuned_length": 95,
+    "reference_length": 19
+  },
+  {
+    "instruction": "Tell me the name of the capital of France. Output the name.",
+    "input": "noinput",
+    "reference": "Paris",
+    "base_prediction": "Tell me the name of the capital of France. Output the name.\n\nInput: noinput\nOutput: No input provided",
+    "finetuned_prediction": "The name of the capital of France is Paris. \ud83c\uddeb\ud83c\uddf7 #France #CapitalofParis #CityOfParis #ParisLife #CityLifestyle #WorldWideWeb #Europe #EiffelTower #StreetArt #Cityscape #Square #ParisFashion #ParisianLove #RueDuPavillon #ParisCathedral #ChampsElysees #CityLights #ParisAttractions #Citylife #TravelAdventure #",
+    "base_length": 18,
+    "finetuned_length": 31,
+    "reference_length": 1
+  },
+  {
+    "instruction": "Brainstorm five questions that you could ask a customer to better understand their needs.",
+    "input": "(none)",
+    "reference": "Here are five questions to better understand a customer's needs:\n\n1. What are your main objectives for this project? \n2. What have you tried before that didn't work?\n3. What is the main goal you're hoping to achieve? \n4. What resources do you currently have to achieve your goals? \n5. What portion of the work do you plan to outsource, and what will be done in-house?",
+    "base_prediction": "Brainstorm five questions that you could ask a customer to better understand their needs. The questions should be open-ended and focus on identifying the root cause of their pain points or obstacles. Consider using a mix of qualitative and quantitative methods to gather data, such as surveys, interviews, or observational feedback. Your goal is to gain insights into the customer's experience, emotions, and preferences, which can inform your product design and marketing efforts.",
+    "finetuned_prediction": "1. What do you want to achieve with your purchase? \n2. How many users will be using the product? \n3. Are there any specific features you are looking for in the product?\n4. Are there any particular requirements or limitations we should consider when designing the product?\n5. Do you have any specific use cases in mind for the product?",
+    "base_length": 73,
+    "finetuned_length": 60,
+    "reference_length": 66
+  },
+  {
+    "instruction": "Brainstorm different ways to cook a specific type of food.",
+    "input": "Pork chops",
+    "reference": "You can cook pork chops in a variety of ways. For instance, you can bake, fry, grill, or even saut\u00e9 them. You can also season them with various herbs and spices to give them a unique flavor. Additionally, pork chops can be marinated to make them moist and tender.",
+    "base_prediction": "Brainstorm different ways to cook a specific type of food.\n\nInput: Pork chops\nOutput:\n1. Grilled pork chops with garlic butter sauce and green beans almondine\n2. Roasted pork chops with balsamic glaze and asparagus\n3. Slow-cooked pork chops with apple cider reduction and crispy fried onions\n4. Crispy pork chop lettuce wraps with sweet potato mash and honey mustard dressing\n5. Baked pork chops with honey roasted vegetables and brown rice\n6. Maple glazed pork chops",
+    "finetuned_prediction": "1. Grill: Marinate pork chops in your favorite marinade and grill until cooked through. \n2. Roast: Preheat oven to 400 degrees and roast pork chops for 35-40 minutes. \n3. Saut\u00e9: Heat oil in a skillet over medium heat and saut\u00e9 the pork chops until golden brown. \n4. Bake: Preheat oven to 375 degrees and bake pork chops for",
+    "base_length": 77,
+    "finetuned_length": 58,
+    "reference_length": 49
+  },
+  {
+    "instruction": "Generate an example of a customer service conversation involving the keyword \"shipping\".",
+    "input": "(none)",
+    "reference": "User: Hi, I'm wondering when can I expect my order to arrive.\nBot: We offer free standard shipping on all orders and the expected delivery date should have been provided to you with the shipment confirmation email. If you need to double check, please provide me with the order details and I'll check the status of your order.",
+    "base_prediction": "Generate an example of a customer service conversation involving the keyword \"shipping\".",
+    "finetuned_prediction": "Customer: I just ordered a product from your store, but I don't know when it will arrive. \nStaff: We apologize for the inconvenience and appreciate your patience with our shipping process. \nCustomer: That's really frustrating! How long does it usually take to get my order?\nStaff: Typically, we can have it delivered within 5-7 business days, depending on the location. If you haven't received it yet, please let us know so we can investigate further.\nCustomer: That's great news",
+    "base_length": 12,
+    "finetuned_length": 79,
+    "reference_length": 58
+  }
+]

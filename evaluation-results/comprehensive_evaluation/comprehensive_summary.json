@@ -1,0 +1,111 @@
+{
+  "evaluation_date": "2025-10-20 15:42:38",
+  "datasets_evaluated": [
+    "Alpaca",
+    "Dolly-15k",
+    "OpenOrca"
+  ],
+  "datasets_failed": [],
+  "total_samples": 465,
+  "average_improvements_all": {
+    "meteor": 6.858233928693309,
+    "rouge1": 2.30497056964438,
+    "rougeL": -3.8629069914249734,
+    "bleu": -38.08793424454479
+  },
+  "average_improvements_ood": {
+    "meteor": -3.478054248136459,
+    "rougeL": -8.352418934136335,
+    "bleu": -56.08038747731233
+  },
+  "individual_results": {
+    "Alpaca": {
+      "dataset": "Alpaca",
+      "num_samples": 198,
+      "model_loading": "PeftModel with active adapters (no merge)",
+      "results": {
+        "base_model": {
+          "rouge1": 0.2351569865567395,
+          "rouge2": 0.10693622388316265,
+          "rougeL": 0.18909119156400056,
+          "bleu": 0.07429786362737412,
+          "meteor": 0.24057832285874756
+        },
+        "finetuned_model": {
+          "rouge1": 0.27620754708535017,
+          "rouge2": 0.10841435305884596,
+          "rougeL": 0.19876531796066804,
+          "bleu": 0.07273535891607967,
+          "meteor": 0.30681148450545564
+        }
+      },
+      "improvements": {
+        "rouge1": 17.456662091860004,
+        "rouge2": 1.3822530121301997,
+        "rougeL": 5.11611689399775,
+        "bleu": -2.103027779009733,
+        "meteor": 27.530810282352842
+      },
+      "avg_lengths": {
+        "base": 41.81818181818182,
+        "finetuned": 76.54545454545455,
+        "reference": 38.696969696969695
+      }
+    },
+    "Dolly-15k": {
+      "dataset": "Dolly-15k (Out-of-Distribution)",
+      "num_samples": 156,
+      "results": {
+        "base_model": {
+          "rouge1": 0.21693559085579303,
+          "rouge2": 0.09117799459591794,
+          "rougeL": 0.16512825407041354,
+          "bleu": 0.05865747818021547,
+          "meteor": 0.19255383134051593
+        },
+        "finetuned_model": {
+          "rouge1": 0.24847193619795588,
+          "rouge2": 0.07940002110595261,
+          "rougeL": 0.16611024226477278,
+          "bleu": 0.04728576462039543,
+          "meteor": 0.24341380480240907
+        }
+      },
+      "improvements": {
+        "rouge1": 14.537192914152335,
+        "rouge2": -12.917561460046228,
+        "rougeL": 0.594682115357741,
+        "bleu": -19.386639031569537,
+        "meteor": 26.41337910952879
+      }
+    },
+    "OpenOrca": {
+      "dataset": "OpenOrca (Out-of-Distribution)",
+      "num_samples": 111,
+      "note": "GPT-4 generated responses",
+      "results": {
+        "base_model": {
+          "rouge1": 0.28818755796024165,
+          "rouge2": 0.13105802840236186,
+          "rougeL": 0.194026669985262,
+          "bleu": 0.06149620905476363,
+          "meteor": 0.2315040202139439
+        },
+        "finetuned_model": {
+          "rouge1": 0.2159131637101554,
+          "rouge2": 0.08611196272245467,
+          "rougeL": 0.16046098743758896,
+          "bleu": 0.004443632478771093,
+          "meteor": 0.1542523148817192
+        }
+      },
+      "improvements": {
+        "rouge1": -25.0789432970792,
+        "rouge2": -34.29478241647133,
+        "rougeL": -17.29951998363041,
+        "bleu": -92.77413592305511,
+        "meteor": -33.36948760580171
+      }
+    }
+  }
+}

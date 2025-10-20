@@ -1,0 +1,4 @@
+Dataset,Type,Samples,METEOR,METEOR Δ,ROUGE-L,ROUGE-L Δ,BLEU,BLEU Δ
+Alpaca,In-dist,198,0.3068,+27.5%,0.1988,+5.1%,0.0727,-2.1%
+Dolly-15k,Out-of-dist,156,0.2434,+26.4%,0.1661,+0.6%,0.0473,-19.4%
+OpenOrca,Out-of-dist,111,0.1543,-33.4%,0.1605,-17.3%,0.0044,-92.8%
