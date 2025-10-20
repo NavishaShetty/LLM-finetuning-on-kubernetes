@@ -1,0 +1,6 @@
+Metric,Base Model,Fine-tuned,Improvement
+ROUGE-1,0.2352,0.2762,+17.5%
+ROUGE-2,0.1069,0.1084,+1.4%
+ROUGE-L,0.1891,0.1988,+5.1%
+BLEU,0.0743,0.0727,-2.1%
+METEOR,0.2406,0.3068,+27.5%

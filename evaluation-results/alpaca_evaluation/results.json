@@ -1,0 +1,33 @@
+{
+  "dataset": "Alpaca",
+  "num_samples": 198,
+  "model_loading": "PeftModel with active adapters (no merge)",
+  "results": {
+    "base_model": {
+      "rouge1": 0.2351569865567395,
+      "rouge2": 0.10693622388316265,
+      "rougeL": 0.18909119156400056,
+      "bleu": 0.07429786362737412,
+      "meteor": 0.24057832285874756
+    },
+    "finetuned_model": {
+      "rouge1": 0.27620754708535017,
+      "rouge2": 0.10841435305884596,
+      "rougeL": 0.19876531796066804,
+      "bleu": 0.07273535891607967,
+      "meteor": 0.30681148450545564
+    }
+  },
+  "improvements": {
+    "rouge1": 17.456662091860004,
+    "rouge2": 1.3822530121301997,
+    "rougeL": 5.11611689399775,
+    "bleu": -2.103027779009733,
+    "meteor": 27.530810282352842
+  },
+  "avg_lengths": {
+    "base": 41.81818181818182,
+    "finetuned": 76.54545454545455,
+    "reference": 38.696969696969695
+  }
+}
